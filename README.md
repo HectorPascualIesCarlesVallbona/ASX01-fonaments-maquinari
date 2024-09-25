@@ -12,3 +12,5 @@ emmagatzemades en memòria auxiliar.
 característiques i aplicacions.
 - Complir les normes de prevenció de riscos laborals i de protecció ambiental, identificant els
 riscos associats, les mesures i equips per a prevenir-los.
+
+hector.pascual@iescarlesvallbona.cat
