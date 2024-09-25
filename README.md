@@ -1,6 +1,6 @@
 # ASX01-fonaments-maquinari
 
-Classe sobre fonaments de maquinari ASX01 de l'Institut Carles Vallbona impartit per Hèctor Pascual
+Classe sobre fonaments de maquinari ASX01 de l'Institut Carles Vallbona 2024-2025
 
 ## objectius generals
 
