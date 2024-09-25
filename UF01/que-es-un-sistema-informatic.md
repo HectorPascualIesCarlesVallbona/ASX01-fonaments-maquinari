@@ -2,6 +2,7 @@
 
 ## Índex
 
+0. [Videos introductoris](#videos-introductoris)
 1. [Introducció als Sistemes Informàtics](#introducció-als-sistemes-informàtics)
 2. [Components d'un Sistema Informàtic](#components-dun-sistema-informàtic)
    1. [Maquinari (Hardware)](#maquinari-hardware)
@@ -30,6 +31,9 @@
 5. [Conclusió](#conclusió)
 
 ---
+
+## 0. Videos introductoris
+[video](https://drive.google.com/file/d/19cC3jsDWr2ZZYkZ4DuQdElWLNdwJPgDv/view)
 
 ## 1. Introducció als Sistemes Informàtics
 
