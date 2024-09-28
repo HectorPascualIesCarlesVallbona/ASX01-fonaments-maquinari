@@ -73,7 +73,7 @@ Un ordinador és un sistema complex compost per diversos subsistemes que treball
 
 ### Gràfic esquemàtic d'un ordinador
 
-![Esquema d'un ordinador](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Block_Diagram_of_Computer.svg/1920px-Block_Diagram_of_Computer.svg.png)
+![Esquema d'un ordinador](https://artoftesting.com/wp-content/uploads/2021/01/block-diagram-of-computer.jpg)
 
 **Explicació del gràfic**: Aquest diagrama mostra els components bàsics d'un ordinador i com interactuen entre ells. La CPU es comunica amb la memòria i els dispositius d'E/S a través de busos que transporten dades i adreces. Els dispositius d'emmagatzematge es comuniquen directament amb la CPU per guardar o recuperar informació.
 
@@ -103,7 +103,7 @@ Permet que l'ordinador es comuniqui amb dispositius externs com impressores, tec
 
 ### Gràfic del funcionament d'una CPU
 
-![CPU](https://upload.wikimedia.org/wikipedia/commons/4/4f/Cpu-diagram.svg)
+![CPU](https://computersciencewiki.org/images/1/1a/Cpu_diagram.png)
 
 ### Comandes de terminal per obtenir informació sobre la CPU
 
@@ -113,7 +113,7 @@ lscpu
 
 Aquest comandament mostra informació detallada sobre la CPU, com el nombre de nuclis, la velocitat del rellotge, i altres detalls de configuració del processador.
 
-![Comanda lscpu](https://i.imgur.com/oAZD5Bi.png)
+![Comanda lscpu](https://geek-university.com/wp-content/images/linux/lscpu_command.jpg)
 
 [Més informació sobre la CPU i els seus subsistemes](https://en.wikipedia.org/wiki/Central_processing_unit).
 
@@ -134,7 +134,7 @@ La **CPU** és responsable de processar les instruccions dels programes. Els com
 
 Un exemple d'una CPU moderna és l'**Intel Core i7**. Aquesta CPU té múltiples nuclis, que permeten executar diverses tasques alhora, i suporta tecnologies com la **hiperfilamentació**, que augmenta l'eficiència del processament.
 
-![Imatge d'un processador Intel](https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel_Core_i7_4770k_top_IMGP8503_%28black_background%29.jpg)
+![Imatge d'un processador Intel](https://cdn.mos.cms.futurecdn.net/JXxsTV5DK9xHBrivNHyFoD.jpg)
 
 #### Monitorització de la CPU en temps real
 
@@ -144,7 +144,7 @@ top
 
 Aquest comandament mostra l'ús en temps real de la CPU, memòria i altres recursos del sistema. És molt útil per veure quins processos consumeixen més recursos.
 
-![Sortida de `top`](https://i.imgur.com/VkegzTh.png)
+![Sortida de `top`](https://vitux.com/wp-content/uploads/2019/01/word-image-377.png)
 
 [Més informació sobre CPU Intel Core i7](https://www.intel.com/content/www/us/en/products/sku/88191/intel-core-i7-6700k-processor-8m-cache-up-to-4-20-ghz.html).
 
@@ -157,7 +157,7 @@ La **memòria** d'un sistema informàtic és responsable de guardar dades tempor
 - **RAM (Random Access Memory)**: Emmagatzema temporalment les dades que s'utilitzen activament. Un exemple comú és la **DDR4 RAM**, que permet la transferència ràpida de dades entre la CPU i altres components.
 - **ROM (Read-Only Memory)**: Guarda instruccions necessàries per al funcionament inicial del sistema, com el codi de la BIOS.
 
-![Gràfic sobre tipus de memòria](https://upload.wikimedia.org/wikipedia/commons/5/5c/ComputerMemoryHierarchy.svg)
+![Gràfic sobre tipus de memòria](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/ComputerMemoryHierarchy.svg/800px-ComputerMemoryHierarchy.svg.png)
 
 #### Verificació de l'ús de memòria
 
@@ -169,7 +169,7 @@ Aquesta comanda mostra la quantitat de memòria RAM i SWAP disponible i utilitza
 
  a cada part de la memòria.
 
-![Sortida de `free -h`](https://i.imgur.com/T8SejWe.png)
+![Sortida de `free -h`](https://atareao.es/wp-content/uploads/2016/05/terminal-free-memory.png)
 
 [Més informació sobre tipus de memòria](https://en.wikipedia.org/wiki/Random-access_memory).
 
@@ -188,7 +188,7 @@ lsusb
 
 Aquesta comanda llista tots els dispositius USB connectats a l'ordinador, mostrant detalls com el fabricant i l'ID del dispositiu.
 
-![Sortida de `lsusb`](https://i.imgur.com/0SxLP5G.png)
+![Sortida de `lsusb`](https://media.geeksforgeeks.org/wp-content/uploads/20190421121309/Screenshot-from-2019-04-21-11-42-47.png)
 
 ### 1.3.4 Tipus d'arquitectura de bus
 
@@ -201,7 +201,7 @@ Els busos són responsables de transportar dades entre diferents components del 
 
 Un exemple d'arquitectura moderna és l'**arquitectura PCIe (Peripheral Component Interconnect Express)**, utilitzada per connectar targetes gràfiques, SSDs, i altres dispositius d'alt rendiment.
 
-![Diagrama d'un bus PCIe](https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/PCIExpress.jpg/1024px-PCIExpress.jpg)
+![Diagrama d'un bus PCIe](https://i.blogs.es/bd135c/pciexpress/840_560.jpg)
 
 #### Llistat de dispositius PCI
 
@@ -211,7 +211,7 @@ lspci
 
 Aquest comandament llista tots els dispositius PCIe instal·lats al sistema, incloent-hi targetes gràfiques, SSD NVMe, i altres dispositius de maquinari.
 
-![Sortida de `lspci`](https://i.imgur.com/T3kXe4k.png)
+![Sortida de `lspci`](https://upload.wikimedia.org/wikipedia/commons/9/9a/Ict-innovation-LPI-Fig-101-1_5.png)
 
 [Més informació sobre l'arquitectura PCIe](https://en.wikipedia.org/wiki/PCI_Express).
 
@@ -227,7 +227,7 @@ El **xassís** és la caixa que conté tots els components físics d'un ordinado
 
 El **NZXT H510** és un xassís popular per als jugadors i entusiastes que necessiten espai per a una targeta gràfica gran i refrigeració líquida.
 
-![Xassís NZXT H510](https://upload.wikimedia.org/wikipedia/commons/7/7f/NZXT_H510i.jpg)
+![Xassís NZXT H510](https://nzxt.com/assets/cms/34299/1615563443-h510-elite-white-black-kraken-x-system-purple-lighting-2.png?auto=format&fit=max&w=1200)
 
 [Més informació sobre el xassís NZXT H510](https://www.nzxt.com/products/h510).
 
@@ -261,7 +261,7 @@ La configuració de la BIOS és crucial per ajustar el rendiment de l'ordinador.
   
 #### Imatge de la configuració d'una UEFI moderna
 
-![Interfície UEFI](https://upload.wikimedia.org/wikipedia/commons/5/58/UEFI_Screenshot_ASUS.png)
+![Interfície UEFI](https://km-ap.asus.com/uploads/PhotoLibrarys/8a53fc79-6a00-4a96-8408-a7e886967aef/20240530113830775_EN_1.png)
 
 [Més informació sobre BIOS i UEFI](https://en.wikipedia.org/wiki/BIOS).
 
@@ -276,8 +276,6 @@ Després de configurar la BIOS, és essencial realitzar proves de rendiment i es
 #### Exemple d'ús
 
 Un sistema de **jocs d'alt rendiment** amb un **Intel Core i9** i una **NVIDIA RTX 3080** ha de ser provat amb Prime95 per assegurar que no hi hagi sobreescalfament ni inestabilitat sota càrrega màxima.
-
-![Prime95 CPU Test](https://www.overclockers.com/wp-content/uploads/2017/06/prime95-stress-test-1.jpg)
 
 [Més informació sobre Prime95](https://www.mersenne.org/download/).
 
@@ -295,7 +293,7 @@ sensors
 
 Aquest comandament mostra les temperatures de la CPU i altres sensors del sistema. És útil per verificar que l'ordinador no estigui sobreescalfant-se.
 
-![Sortida de `sensors`](https://i.imgur.com/tC3ZJZ2.png)
+![Sortida de `sensors`](https://www.tecmint.com/wp-content/uploads/2020/01/Check-CPU-and-GPU-Temperature-using-sensors.png)
 
 [Més informació sobre HWMonitor](https://www.cpuid.com/softwares/hwmonitor.html).
 
@@ -313,7 +311,7 @@ Els **SSD (Solid State Drives)** inclouen firmware propi que gestiona el control
 
 Els **Samsung EVO 970** inclouen actualitzacions de firmware que milloren el rendiment de lectura/escriptura i corregeixen errors de seguretat detectats.
 
-![SSD Samsung EVO](https://images.samsung.com/is/image/samsung/p6pim/es/mz-v7e250bw/gallery/es-970-evo-nvme-m2-ssd-294644236?$720_576_PNG$)
+![SSD Samsung EVO](https://m.media-amazon.com/images/I/81YB-VvUnZL._AC_UF894,1000_QL80_.jpg)
 
 #### Optimització d'un SSD amb TRIM
 
@@ -343,7 +341,7 @@ Per detectar problemes de maquinari, es poden utilitzar eines de diagnòstic com
 
 Després de muntar un sistema, utilitzar **Intel Processor Diagnostic Tool** per verificar que el processador no té errors de fabricació o mal funcionament.
 
-![Intel Processor Diagnostic Tool](https://www.intel.com/content/dam/support/us/en/images/processors/Processor_Intel%20Processor%20Diagnostic%20Tool.png)
+![Intel Processor Diagnostic Tool](https://www.intel.com/content/dam/support/us/en/images/processors/94564-img1.png)
 
 [Més informació sobre Intel Processor Diagnostic Tool](https://www.intel.com/content/www/us/en/download/15951/intel-processor-diagnostic-tool.html).
 
@@ -385,7 +383,7 @@ nmcli dev status
 
 Aquesta comanda mostra l'estat de les connexions de xarxa, incloent dispositius Ethernet i Wi-Fi, i si estan connectats o no.
 
-![Sortida de `nmcli`](https://i.imgur.com/FkfRkPR.png)
+![Sortida de `nmcli`](https://www.linuxtechi.com/wp-content/uploads/2022/01/nmcli-command-output.png)
 
 [Més informació sobre Wi-Fi 6](https://www.intel.com/content/www/us/en/wireless-network/wi-fi-6.html).
 
@@ -409,7 +407,7 @@ ssh user@192.168.1.100
 
 Aquesta comanda permet connectar-se de manera remota a un altre sistema mitjançant SSH. És útil per a l'administració remota de servidors o altres ordinadors a la xarxa.
 
-![SSH Connection](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/OpenSSH_logo.svg/2560px-OpenSSH_logo.svg.png)
+![SSH Connection](https://media.geeksforgeeks.org/wp-content/uploads/20230425123007/65.webp)
 
 [Més informació sobre SSH](https://en.wikipedia.org/wiki/Secure_Shell).
 
