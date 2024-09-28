@@ -123,15 +123,13 @@ Total per a 500 treballadors: 1.260.000€
 
 ---
 
-### 4
-
- Conclusió
+### 4. Conclusió
 
 L'últim apartat de l'informe ha de justificar per què la configuració d'ordinador escollida és òptima per a l'empresa seleccionada. La conclusió ha de posar èmfasi en la relació qualitat-preu, el rendiment que s'aconseguirà, i la durabilitat dels components.
 
 ---
 
-### 5. GitHub: Puja de l'informe
+### 5. GitHub: Pujada de l'informe
 
 Quan acabis l'informe, l'hauràs de pujar al teu GitHub personal seguint aquest format de directori:
 
