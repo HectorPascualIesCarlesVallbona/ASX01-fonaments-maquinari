@@ -21,8 +21,6 @@
       - [Verificació de l'ús de memòria](#verificació-de-lús-de-memòria)
     - [1.3.3 Subsistema d'E/S](#133-subsistema-des)
       - [Verificació de dispositius USB connectats](#verificació-de-dispositius-usb-connectats)
-    - [1.3.4 Tipus d'arquitectura de bus](#134-tipus-darquitectura-de-bus)
-      - [Tipus de busos](#tipus-de-busos)
       - [Llistat de dispositius PCI](#llistat-de-dispositius-pci)
   - [1.4 Components d'integració per assemblar equips informàtics](#14-components-dintegració-per-assemblar-equips-informàtics)
     - [1.4.1 Xassís](#141-xassís)
@@ -189,19 +187,6 @@ lsusb
 Aquesta comanda llista tots els dispositius USB connectats a l'ordinador, mostrant detalls com el fabricant i l'ID del dispositiu.
 
 ![Sortida de `lsusb`](https://media.geeksforgeeks.org/wp-content/uploads/20190421121309/Screenshot-from-2019-04-21-11-42-47.png)
-
-### 1.3.4 Tipus d'arquitectura de bus
-
-Els busos són responsables de transportar dades entre diferents components del sistema.
-
-#### Tipus de busos
-
-- **Bus de dades**: Transmet informació entre la CPU i la memòria.
-- **Bus d'adreces**: Transmet les adreces de memòria on es guarden les dades.
-
-Un exemple d'arquitectura moderna és l'**arquitectura PCIe (Peripheral Component Interconnect Express)**, utilitzada per connectar targetes gràfiques, SSDs, i altres dispositius d'alt rendiment.
-
-![Diagrama d'un bus PCIe](https://i.blogs.es/bd135c/pciexpress/840_560.jpg)
 
 #### Llistat de dispositius PCI
 
