@@ -1,4 +1,4 @@
-# 20240924
+# 24092024
 
 - video introductori sobre sistemes informàtics
 - crear portfoli
