@@ -8,6 +8,14 @@
 
 ---
 
+## Videos intro
+
+[Inside a google Data Center](https://www.youtube.com/watch?v=XZmGGAbHqa0)
+
+[Google Data Center Security](https://www.youtube.com/watch?v=kd33UVZhnAA)
+
+---
+
 ## Resum PDF instal.lació, configuració i recuperació programari
 
 ### Índex
