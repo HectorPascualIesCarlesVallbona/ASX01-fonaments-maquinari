@@ -11,7 +11,7 @@
 - demanar voluntari per pràctica, punt positiu
 - pràctica
 
-# 15102024
+# 16102024
 
 - video RA02
 - pràctica RA02
