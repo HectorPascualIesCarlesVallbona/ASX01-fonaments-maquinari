@@ -1,8 +1,67 @@
 # 02 - Pràctica02 - SALES ORDINADORS
 
+## Anotacions per si esteu perduts
+
+### Programes per la instal·lació i personalització dels sistemes operatius
+
+Haureu d'utilitzar eines com VirtualBox per crear les màquines virtuals amb Ubuntu i Windows 10, respectivament, com s'indica a la pràctica.
+
+### Personalització d'imatges de sistema
+
+1. **Clonezilla**: Pot ser utilitzat per a la clonació de sistemes un cop s'ha creat la imatge model, i desplegar-la de forma massiva als 150 ordinadors per sala.
+2. **Sysprep (Windows)**: Per a Windows 10, l'eina Sysprep permet crear imatges de sistema personalitzades, com les que s'utilitzen en OEM per preconfigurar els ordinadors.
+3. **OEM preinstallation kit (OPK) per Windows**: Aquesta eina permet crear versions personalitzades de Windows per a la seva distribució.
+
+### Programari de gestió d'imatges
+
+Per la part de Linux, es pot utilitzar **partclone** o altres eines incloses amb **Clonezilla** per crear imatges de disc personalitzades d'Ubuntu, amb tot el programari necessari ja instal·lat.
+
+### Programes addicionals
+
+1. **GIMP**: Ha de ser instal·lat en ambdós sistemes operatius per la personalització del fons de pantalla.
+2. **Guake**: En Ubuntu, aquest terminal desplegable és necessari per facilitar l'accés al terminal.
+3. **VLC**: En Windows 10, aquest reproductor ha d'estar inclòs com a part del paquet de programari preinstal·lat.
+
+---
+
+## Resum del flux d'implementació
+
+### 1. **Investigació prèvia**
+
+- Realitzar una **fase d'investigació** per determinar quines eines i mètodes s’utilitzaran per desplegar els sistemes operatius de manera eficient.
+- Considerar eines com **Sysprep** per a Windows i **Clonezilla** per a Ubuntu per facilitar el desplegament massiu i la personalització.
+
+### 2. **Creació de màquines virtuals**
+
+- Preparar **dues màquines virtuals** per a cada sistema:
+  - Una amb **Ubuntu**, amb tots els requisits.
+  - Una amb **Windows 10**, també amb tots els requisits.
+- Aquestes màquines virtuals seran les imatges mestres que es faran servir per a la clonació en massa.
+
+### 3. **Personalització de la instal·lació**
+
+- **Ubuntu** (Sala 1: "Linus, the wild penguin"):
+  - Instal·lar **Ubuntu** en mode **OEM**, perquè els usuaris només hagin d'introduir el seu nom i contrasenya.
+  - Personalitzar el **fons de pantalla** amb el nom de l'alumne i instal·lar **GIMP** i **Guake**.
+  - Assignar els noms de host com `wildpenguin[Cognom1]1`, `wildpenguin[Cognom1]2`.
+
+- **Windows 10** (Sala 2: "The fabulous meadow of bill gates"):
+  - Instal·lar **Windows 10** en mode **OEM**.
+  - Personalitzar el **fons de pantalla** amb el nom de l'alumne i instal·lar **VLC**.
+  - Assignar els noms de host com `billy_meadow_[Cognom1]1`, `billy_meadow_[Cognom1]2`.
+
+### 4. **Execució del desplegament** (Punt 5)
+
+- **Implementar el mètode decidit** per preparar els sistemes operatius segons els requisits.
+- Utilitzar les imatges creades a les màquines virtuals per desplegar els **150 ordinadors amb Ubuntu** i els **150 amb Windows 10** de manera massiva, fent servir eines de clonació.
+
+---
+
 ## Introducció
 
 La tasca d’aquesta pràctica és desplegar dues sales amb un total de 300 ordinadors, dividits en dues configuracions de sistema operatiu diferents: **Ubuntu** i **Windows 10**. Aquests ordinadors s'utilitzaran per a una ponència sobre un nou programari d'empresa, i s'han de personalitzar segons uns requisits concrets.
+
+---
 
 ## Requisits de la Pràctica
 
@@ -29,7 +88,7 @@ La tasca d’aquesta pràctica és desplegar dues sales amb un total de 300 ordi
 ### A) Preparació d’Ubuntu (Sala 1)
 
 1. **Creació de la Màquina Virtual**:
-   - Utilitza **VirtualBox** o **VMware** per crear una màquina virtual per a Ubuntu.
+   - Utilitza **VirtualBox** per crear una màquina virtual per a Ubuntu.
    - Assigna 4 GB de RAM, 2 processadors i 20 GB d’emmagatzematge. Aquesta configuració és adequada per a l’ús de les aplicacions sol·licitades.
 
 2. **Instal·lació d'Ubuntu**:
@@ -140,5 +199,4 @@ La tasca d’aquesta pràctica és desplegar dues sales amb un total de 300 ordi
    - Obre **GIMP** i **Guake** (en Ubuntu) i verifica que funcionen correctament.
    - Assegura’t que **VLC** i **GIMP** (en Windows) funcionin també de manera òptima.
 3. **Nom dels Hosts**:
-
    - Revisa els noms dels hosts per confirmar que segueixen el format establert per a cada sala i que són coherents amb la configuració.
