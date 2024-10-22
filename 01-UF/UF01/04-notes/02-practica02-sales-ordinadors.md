@@ -1,10 +1,4 @@
-# Pràctica UF2 - Part 3
-
-### Departament d'Informàtica - Institut Carles Vallbona  
-
-### CFGS ASIX - Pràctiques
-
----
+# 02 - Pràctica02 - SALES ORDINADORS
 
 ## Introducció
 

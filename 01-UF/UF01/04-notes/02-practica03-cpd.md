@@ -14,7 +14,7 @@ L'entorn de proves tindrà tres màquines virtuals:
 #### 1.1 Configuració del Servidor DRBL
 
 1. **Creació de la Màquina Virtual del Servidor DRBL**:
-   - Obre **VirtualBox** o **VMware** i crea una nova màquina virtual per al servidor.
+   - Obre **VirtualBox** i crea una nova màquina virtual per al servidor.
    - **Nom**: Assigna un nom (p. ex., `Servidor_DRBL`).
    - **Sistema Operatiu**: Tria Linux i la versió adequada (p. ex., Ubuntu 64-bit).
    - **Recursos**: Assigna 4 GB de RAM, 2 CPU i un disc dur de 20 GB per garantir un rendiment adequat.
