@@ -1,17 +1,11 @@
-# Pràctica UF2 - Part 2
-
-### Departament d'Informàtica - Institut Carles Vallbona  
-
-### CFGS ASIX - Pràctiques
-
----
+# 02 - Pràctica 01 - programari
 
 ## 1. Diferència entre Antivirus, Firewall i Spyware
 
 ### Antivirus
 
 Els **antivirus** són programes dissenyats per detectar, prevenir i eliminar programes maliciosos, com virus, cucs i troians. Aquests programes analitzen arxius i aplicacions per identificar i eliminar codi nociu.  
-Exemples comuns d'antivirus inclouen **McAfee**, **Norton**, i **Avast**.
+Exemples d'antivirus comuns **McAfee**, **Norton**, i **Avast**.
 
 ### Firewall
 
@@ -20,7 +14,7 @@ Un **firewall** és una barrera de seguretat que controla el trànsit de xarxa e
 ### Spyware
 
 El **spyware** és un tipus de programari que s'instal·la a l'ordinador sense permís i recull informació sobre l'usuari, com l'historial de navegació, contrasenyes i dades personals. Aquest programari s'utilitza sovint per fer seguiment de l'activitat de l'usuari i, en alguns casos, per robar informació confidencial.  
-Exemples de programes anti-spyware inclouen **Spybot** i **Malwarebytes**.
+Exemples de programes anti-spyware: **Spybot** i **Malwarebytes**.
 
 ---
 
@@ -34,7 +28,7 @@ Les còpies de seguretat són essencials per protegir la informació davant de p
 - **Còpia de Seguretat Incremental**: Només copia els fitxers que han canviat des de l'última còpia de seguretat. Redueix el temps i l'espai de còpia, però la recuperació pot ser més lenta.
 - **Còpia de Seguretat Diferencial**: Crea una còpia dels fitxers que han canviat des de l'última còpia completa. És més ràpida que una còpia completa però ocupa més espai que la incremental.
 
-Exemples d'eines per fer còpies de seguretat inclouen **Acronis True Image** per a Windows i **Déjà Dup** per a Linux.
+Exemples d'eines per fer còpies de seguretat: **Acronis True Image** per a Windows i **Déjà Dup** per a Linux.
 
 ---
 
@@ -65,9 +59,6 @@ Una **partició** és una divisió lògica d'un disc dur que permet separar l'es
   2. A la finestra que apareix, tria "Gestió de discos".
   3. Aquí, podràs crear una partició nova fent clic dret sobre un espai no assignat i seleccionant "Nou volum simple".
   
-  *Captura de pantalla*:
-  ![Disk Management Windows](disk_management_windows_example.png)
-  
 #### Per a Linux
 
 - **GParted**: És una eina de gestió de particions molt usada en sistemes Linux, disponible en format live CD/USB. Permet crear, esborrar, moure i redimensionar particions.
@@ -77,5 +68,3 @@ Una **partició** és una divisió lògica d'un disc dur que permet separar l'es
   2. Inicia l'aplicació amb permisos d'administrador amb `sudo gparted`.
   3. Per crear una nova partició, selecciona l'espai no assignat, fes clic dret i tria "Nou".
   
-  *Captura de pantalla*:
-  ![GParted Linux](gparted_linux_example.png)
