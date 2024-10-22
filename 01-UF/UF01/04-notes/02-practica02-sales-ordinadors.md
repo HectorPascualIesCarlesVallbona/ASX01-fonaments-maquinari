@@ -170,7 +170,7 @@ La tasca d’aquesta pràctica és desplegar dues sales amb un total de 300 ordi
 
 ---
 
-## 2. Desplegament en Massa
+## 2. Desplegament en Massa (pràctica posterior)
 
 ### Utilització de DRBL amb Clonezilla i Acronis True Image
 
