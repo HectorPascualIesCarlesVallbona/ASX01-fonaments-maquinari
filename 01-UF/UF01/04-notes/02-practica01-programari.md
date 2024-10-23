@@ -24,9 +24,92 @@ Les còpies de seguretat són essencials per protegir la informació davant de p
 
 ### Tipus Principals de Còpies de Seguretat
 
-- **Còpia de Seguretat Completa**: Fa una còpia de tots els fitxers seleccionats. És el procés més lent i ocupa més espai, però facilita la recuperació de dades.
-- **Còpia de Seguretat Incremental**: Només copia els fitxers que han canviat des de l'última còpia de seguretat. Redueix el temps i l'espai de còpia, però la recuperació pot ser més lenta.
-- **Còpia de Seguretat Diferencial**: Crea una còpia dels fitxers que han canviat des de l'última còpia completa. És més ràpida que una còpia completa però ocupa més espai que la incremental.
+### Còpia de Seguretat Completa
+
+- **Què fa?**: Fa una còpia de tots els fitxers i dades del sistema o d'una ubicació especificada, independentment de si han canviat o no. Cada còpia completa és una còpia independent que conté totes les dades.
+- **Avantatges**:
+  - **Restauració ràpida i senzilla**: Com que és una còpia completa de totes les dades, per restaurar només necessites aquesta còpia sense dependre d'altres còpies.
+  - **Simplicitat**: És el tipus de còpia de seguretat més fàcil de gestionar, ja que no hi ha dependències entre còpies.
+- **Desavantatges**:
+  - **Espai d'emmagatzematge**: Ocupa molt més espai, ja que es copien tots els fitxers cada vegada, fins i tot aquells que no han canviat.
+  - **Temps de còpia**: El procés és més lent perquè copia tots els fitxers cada vegada.
+
+### Còpia de Seguretat Incremental
+
+- **Què fa?**: Fa una còpia només dels fitxers que han canviat o s'han creat des de l'última còpia de seguretat **(incremental o completa)**. Això vol dir que cada còpia només inclou els canvis fets des de l'última còpia, sigui quin sigui el tipus de còpia anterior.
+- **Avantatges**:
+  - **Estalvi d'espai**: Cada còpia ocupa menys espai, ja que només es copien els fitxers nous o modificats des de l'última còpia.
+  - **Estalvi de temps**: És més ràpida que altres tipus de còpia perquè s'executa només sobre els fitxers canviats.
+- **Desavantatges**:
+  - **Restauració més lenta**: Per restaurar el sistema, necessites la còpia completa original i totes les còpies incrementals fins a l'últim punt de restauració. Això fa que el procés sigui més complex i llarg.
+  
+### Còpia de Seguretat Diferencial
+
+- **Què fa?**: Fa una còpia dels fitxers que han canviat o s'han creat des de l'última còpia de seguretat **completa**. Cada còpia diferencial inclou tots els fitxers modificats o nous des de la còpia completa més recent.
+- **Avantatges**:
+  - **Restauració més ràpida**: Per restaurar el sistema, només necessites la còpia completa original i l'última còpia diferencial, fent que el procés sigui més senzill i ràpid que amb les incrementals.
+- **Desavantatges**:
+  - **Més espai d'emmagatzematge**: A mesura que es fan més còpies diferencials, aquestes creixen perquè acumulen tots els canvis des de l'última còpia completa, ocupant més espai que les còpies incrementals.
+  - **Còpia més lenta**: A mesura que passa el temps des de l'última còpia completa, la còpia diferencial es va fent més gran i triga més temps a completar-se.
+
+### Comparació entre Completa, Incremental i Diferencial
+
+| Característica                   | Còpia Completa                      | Còpia Incremental                    | Còpia Diferencial                    |
+|-----------------------------------|-------------------------------------|--------------------------------------|--------------------------------------|
+| **Què copia?**                    | Tots els fitxers                    | Canvis des de l'última còpia (sigui quina sigui) | Canvis des de l'última còpia completa |
+| **Espai ocupat**                  | Molt gran                           | Molt petit                           | Creixent amb el temps                |
+| **Temps de còpia**                | Més lent                            | Ràpid                               | Més lent amb el temps                |
+| **Restauració**                   | Només necessites una còpia          | Necessites totes les còpies incrementals | Necessites la còpia completa i l'última diferencial |
+| **Complexitat de restauració**    | Molt baixa                          | Més alta                            | Moderada                            |
+
+### Diferències Clau
+
+1. **Còpia Completa**: Cada còpia inclou **tots els fitxers**. És senzilla i ràpida de restaurar, però consumeix molt espai i temps en fer-se.
+
+2. **Còpia Incremental**: Cada còpia només inclou els **fitxers nous o modificats** des de l'última còpia, sigui del tipus que sigui. És la més eficient en espai i temps de còpia, però la restauració és més complexa, ja que es necessita la còpia completa original i totes les incrementals.
+
+3. **Còpia Diferencial**: Cada còpia inclou els **fitxers nous o modificats des de l'última còpia completa**. Consumeix més espai que la còpia incremental, però la restauració és més senzilla, ja que només necessites la còpia completa i l'última còpia diferencial.
+
+### Resum
+
+- **Còpia completa**: Ideal si tens molt espai d’emmagatzematge i necessites restaurar ràpidament.
+- **Còpia incremental**: Ideal per optimitzar espai i temps de còpia, però requereix una restauració més complexa.
+- **Còpia diferencial**: Ofereix un bon equilibri entre espai d’emmagatzematge i facilitat de restauració.
+
+### Dubtes entre diferencial i incremental
+
+1. **Còpia Incremental**:
+   - Cada còpia incremental només copia els **canvis des de l'última còpia**, sigui aquesta completa o incremental.
+   - Exemple:
+     - Fas una còpia completa el **dilluns**.
+     - Dimarts, fas una còpia incremental que només inclou els canvis fets entre dilluns i dimarts.
+     - Dimecres, fas una còpia incremental que només inclou els canvis fets entre dimarts i dimecres.
+     - Dijous, fas una còpia incremental amb els canvis des de dimecres, i així successivament.
+
+   Per restaurar el sistema al dijous, necessitaries:
+   - La còpia completa del dilluns.
+   - La còpia incremental del dimarts.
+   - La còpia incremental del dimecres.
+   - La còpia incremental del dijous.
+
+   **No passa a ser diferencial en cap moment**, segueix copiant només els canvis des de l'última còpia incremental o completa.
+
+2. **Còpia Diferencial**:
+   - Cada còpia diferencial inclou els **canvis des de l'última còpia completa**.
+   - Exemple:
+     - Fas una còpia completa el **dilluns**.
+     - Dimarts, fas una còpia diferencial que inclou els canvis des de la còpia completa del dilluns.
+     - Dimecres, fas una còpia diferencial que inclou **tots els canvis des de dilluns**, no només des de dimarts.
+     - Dijous, fas una còpia diferencial amb **tots els canvis des de dilluns**.
+
+   Per restaurar el sistema al dijous, només necessitaries:
+   - La còpia completa del dilluns.
+   - La còpia diferencial del dijous.
+
+### Diferència clau
+
+- **Incremental**: Cadascuna de les còpies incremental només es basa en l'última còpia (sigui incremental o completa).
+- **Diferencial**: Cada còpia diferencial es basa en l'última còpia completa.
 
 Exemples d'eines per fer còpies de seguretat: **Acronis True Image** per a Windows i **Déjà Dup** per a Linux.
 

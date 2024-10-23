@@ -22,6 +22,25 @@ Per la part de Linux, es pot utilitzar **partclone** o altres eines incloses amb
 2. **Guake**: En Ubuntu, aquest terminal desplegable és necessari per facilitar l'accés al terminal.
 3. **VLC**: En Windows 10, aquest reproductor ha d'estar inclòs com a part del paquet de programari preinstal·lat.
 
+### OEM
+
+**OEM** (Original Equipment Manufacturer) és un terme utilitzat per referir-se a fabricants d'equipament original, però també té un significat específic en el context de sistemes operatius com Windows o Ubuntu. En aquest cas, una **instal·lació OEM** fa referència a una instal·lació de sistema operatiu que és preconfigurada per un fabricant o administrador per ser distribuïda a diversos usuaris finals. El sistema està personalitzat però permet que, en el primer inici de sessió, l'usuari final completi certs passos com la creació d'un nom d'usuari i contrasenya.
+
+#### Detalls de les instal·lacions OEM
+
+1. **Per què es fa servir?**
+   - Els fabricants d'ordinadors (com Dell, HP, Lenovo, etc.) fan servir instal·lacions OEM per preconfigurar els sistemes operatius que venen amb els seus dispositius. Això permet que els dispositius arribin als usuaris amb tot el programari preinstal·lat, les configuracions ajustades, però deixant passos senzills perquè l'usuari final els completi.
+   - En projectes com el que planteges, utilitzar instal·lacions OEM facilita la distribució massiva d'ordinadors o sistemes personalitzats, ja que et permet preconfigurar els ordinadors amb programari, fons de pantalla, i altres elements, però deixa l'última configuració (com ara l'usuari i contrasenya) per a l'usuari final.
+
+2. **Característiques principals d'una instal·lació OEM**:
+   - **Preconfiguració per part del fabricant o administrador**: Es configura el sistema amb programes, fons de pantalla, controladors, etc.
+   - **Personalització d'usuari final**: Quan l'usuari final arrenca la màquina per primera vegada, aquest completa la configuració bàsica (com el nom d'usuari i la contrasenya).
+   - **Utilitat en entorns empresarials o escolars**: En desplegaments massius, com a les aules o oficines, la instal·lació OEM facilita el manteniment d'un conjunt homogeni de màquines amb configuracions predefinides, reduint el temps de configuració manual per part de l'usuari final.
+
+#### Exemple
+
+Quan instal·les un sistema operatiu Ubuntu o Windows en mode **OEM**, pots preparar la màquina amb tot el programari que vulguis (com GIMP, VLC, Guake, etc.), configurar el fons de pantalla, i fins i tot assignar noms de host als equips. L'usuari final, però, només haurà de completar els passos restants quan engegui l'ordinador per primera vegada, com ara crear el seu compte d'usuari i contrasenya.
+
 ---
 
 ## Resum del flux d'implementació
