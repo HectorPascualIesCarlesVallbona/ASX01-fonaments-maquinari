@@ -15,3 +15,7 @@
 
 - video RA02
 - pràctica RA02
+
+# 23102024
+
+- continuació pràctica programari
