@@ -5,7 +5,7 @@
 ### Antivirus
 
 Els **antivirus** són programes dissenyats per detectar, prevenir i eliminar programes maliciosos, com virus, cucs i troians. Aquests programes analitzen arxius i aplicacions per identificar i eliminar codi nociu.  
-Exemples d'antivirus comuns **McAfee**, **Norton**, i **Avast**.
+Exemples d'antivirus: **McAfee**, **Norton**, i **Avast**.
 
 ### Firewall
 
