@@ -42,6 +42,10 @@
 
    Crea el fitxer del servei a `/etc/systemd/system/set-hostname.service` amb el següent contingut:
 
+   ```bash
+   sudo nano /etc/systemd/system/set-hostname.service
+   ```
+
    ```ini
    [Unit]
    Description=Configura el nom de host la primera vegada
