@@ -42,18 +42,22 @@
 
    Crea el fitxer del servei a `/etc/systemd/system/set-hostname.service` amb el següent contingut:
 
-   ```ini
-   [Unit]
-   Description=Configura el nom de host la primera vegada
-   After=network.target
+   ```bash
+    [sudo tee /etc/systemd/system/set-hostname.service > /dev/null <<EOF
 
-   [Service]
-   Type=oneshot
-   ExecStart=/usr/local/bin/set_hostname.sh
-   RemainAfterExit=true
+    [Unit]
+    Description=Configura el nom de host la primera vegada
+    After=network.target
 
-   [Install]
-   WantedBy=multi-user.target
+    [Service]
+    Type=oneshot
+    ExecStart=/usr/local/bin/set_hostname.sh
+    RemainAfterExit=true
+
+    [Install]
+    WantedBy=multi-user.target
+    EOF
+
    ```
 
    Aquest servei executarà l’script una sola vegada i després es desactivarà.
