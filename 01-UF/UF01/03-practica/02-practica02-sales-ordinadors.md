@@ -4,13 +4,13 @@
 
 ## Personalitza per a OEM
 
-    - Obre la terminal i crea un script nou en el directori /etc/profile.d/ per tal que s'executi en el primer inici de sessió
+- Obre la terminal i crea un script nou en el directori /etc/profile.d/ per tal que s'executi en el primer inici de sessió
 
     ```bash
         sudo nano /etc/profile.d/set_hostname.sh
     ```
 
-    - Afegeix aquest contingut a l’script. Després desa i tanca
+- Afegeix aquest contingut a l’script. Després desa i tanca
 
     ```bash
         #!/bin/bash
@@ -26,7 +26,7 @@
         fi
     ```
 
-    - Fes Executable l'script
+- Fes Executable l'script
 
     ```bash
         sudo chmod +x /etc/profile.d/set_hostname.sh
