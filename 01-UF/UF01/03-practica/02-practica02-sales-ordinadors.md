@@ -6,8 +6,6 @@
 
 ### Passos per Configurar un Nom de Host Dinàmic amb un Servei de systemd
 
-D’acord, aquí tens els passos per crear el fitxer de servei `systemd` per parts:
-
 ### 1. Crea el Fitxer de Servei
 
 Primer, crea el fitxer de servei en la ubicació correcta:
