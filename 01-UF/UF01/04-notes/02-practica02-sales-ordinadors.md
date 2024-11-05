@@ -4,7 +4,7 @@
 
 ### Programes per la instal·lació i personalització dels sistemes operatius
 
-Haureu d'utilitzar eines com VirtualBox per crear les màquines virtuals amb Ubuntu i Windows 10, respectivament, com s'indica a la pràctica.
+Haureu d'utilitzar eines com VirtualBox per crear les màquines virtuals amb Ubuntu 18 i Windows 10.
 
 ### Personalització d'imatges de sistema
 
@@ -112,10 +112,42 @@ La tasca d’aquesta pràctica és desplegar dues sales amb un total de 300 ordi
 
 2. **Instal·lació d'Ubuntu**:
    - Descarrega l'última versió d'Ubuntu (preferiblement la versió LTS).
-   - Inicia la màquina virtual i selecciona l'opció **Instal·lació OEM** (si està disponible en la versió descarregada) per garantir que els usuaris finals puguin configurar la màquina en el primer inici.
-   - Completa la instal·lació i accedeix com a "OEM user" per a la configuració i personalització del sistema.
+   - Personalitza per a OEM
+     - Obre la terminal i crea un script nou en el directori /etc/profile.d/ per tal que s'executi en el primer inici de sessió
 
-3. **Personalització del Sistema**:
+      ```bash
+         sudo nano /etc/profile.d/set_hostname.sh
+      ```
+
+     - Afegeix aquest contingut a l’script. Després desa i tanca
+
+      ```bash
+         #!/bin/bash
+         if [ ! -f /etc/hostname_set ]; then
+            echo "Introdueix el teu primer cognom per configurar el nom de host:"
+            read COGNOM1
+            HOSTNAME="wildpenguin${COGNOM1}"
+            sudo hostnamectl set-hostname "$HOSTNAME"
+            echo "$HOSTNAME" | sudo tee /etc/hostname
+            sudo sed -i "s/127.0.1.1.*/127.0.1.1 $HOSTNAME/" /etc/hosts
+            sudo touch /etc/hostname_set
+            echo "Nom de host establert a $HOSTNAME. Reinicia per aplicar els canvis."
+         fi
+      ```
+
+      - Fes Executable l'script
+
+      ```bash
+         sudo chmod +x /etc/profile.d/set_hostname.sh
+      ```
+
+   - Com Funciona l'script
+      Quan un usuari iniciï sessió per primera vegada:
+       - L’script demanarà el primer cognom de l'usuari.
+       - El nom de host es crearà amb el format wildpenguin[Cognom1].
+       - El sistema desarà el nou nom de host i evitarà que l’script s’executi en futures iniciades de sessió.
+
+1. **Personalització del Sistema**:
    - **Fons de Pantalla**: Crea un fons de pantalla amb el teu nom i cognom utilitzant GIMP. Un cop dissenyat, guarda'l com a **wallpaper.png** a la carpeta d'imatges i selecciona’l com a fons predeterminat a *Configuració → Aparença → Fons de pantalla*.
    - **Nom del Host**:
      - Obre el terminal i executa:
@@ -131,7 +163,7 @@ La tasca d’aquesta pràctica és desplegar dues sales amb un total de 300 ordi
        sudo nano /etc/hosts
        ```
 
-4. **Instal·lació de Programari**:
+2. **Instal·lació de Programari**:
    - **GIMP**: Executa la comanda següent per instal·lar GIMP:
 
      ```bash
@@ -145,17 +177,67 @@ La tasca d’aquesta pràctica és desplegar dues sales amb un total de 300 ordi
      sudo apt-get install guake -y
      ```
 
-   - Configura Guake perquè s'iniciï automàticament quan l’usuari iniciï sessió (a *Preferències → Aplicacions d’inici*).
+   - **Configura** Guake perquè s'iniciï automàticament quan l’usuari iniciï sessió:
 
-5. **Preparació d’Imatge de Clonació amb Clonezilla**:
-   - Inicia **Clonezilla** en mode *Save Disk*, selecciona l'opció de crear una imatge del sistema instal·lat i personalitzat.
-   - Guarda la imatge a un servidor de xarxa o unitat d’emmagatzematge extern.
-   - Per al desplegament en massa, configura un servidor **DRBL** per utilitzar Clonezilla en mode multicast, permetent clonar totes les màquines de la sala alhora.
+      - Executa aquesta comanda per crear una entrada d'inici automàtic per a Guake:
+
+      ```bash
+      mkdir -p ~/.config/autostart
+      echo -e "[Desktop Entry]\nType=Application\nExec=guake\nHidden=false\nNoDisplay=false\nX-GNOME-Autostart-enabled=true\nName=Guake\nComment=Start Guake at login" > ~/.config/autostart/guake.desktop
+      ```
+
+      Aquesta comanda crea un fitxer `.desktop` a la carpeta `~/.config/autostart` que farà que Guake s'iniciï automàticament en iniciar sessió.
+
+     - Verifica que l'arxiu s'hagi creat correctament:
+
+      ```bash
+      cat ~/.config/autostart/guake.desktop
+      ```
+
+3. **Preparació d’Imatge de Clonació amb Clonezilla**:
+   - Instal.lació Clonezilla:
+     - Descarrega l'última versió de Clonezilla Live en format ISO des de la seva [pàgina oficial](https://clonezilla.org/downloads.php).
+
+   - Adjunta la ISO a la MV:
+     - A VirtualBox, selecciona la MV que vols clonar i vés a **Configuració > Emmagatzematge**.
+     - Afegeix la ISO de Clonezilla com a unitat òptica en IDE fent clic al controlador òptic i seleccionant **Afegeix una imatge de disc òptic**.
+      En VirtualBox, és recomanable afegir la ISO de Clonezilla com a unitat òptica en el controlador IDE. Això és perquè les unitats òptiques solen estar configurades en IDE de manera predeterminada, i alguns sistemes poden tenir problemes per detectar-les correctament si es troben en un controlador SATA.
+
+   - Inicia la màquina virtual des de la ISO:
+     - Reinicia la MV. Amb la ISO de Clonezilla adjunta arrencarà directament en Clonezilla.
+
+   - Crea la imatge del sistema:
+     - Selecciona la primera opció per arrencar en mode "Clonezilla live".
+     Aquí tens una guia pas a pas per crear una imatge del sistema amb Clonezilla dins de VirtualBox, detallant totes les
+     - Selecciona l'idioma:
+       - Escull l’idioma amb les fletxes de direcció (en el meu cas, `English`).
+       - A la següent pantalla, selecciona `Keep the default keyboard layout`.
+
+     - A la pantalla que diu "Start Clonezilla", selecciona aquesta mateixa per començar.
+     - Selecciona l'opció `device-image` (dispositiu a imatge). Això permet crear una imatge del sistema per guardar-la en un dispositiu extern o una ubicació de xarxa.
+     - Clonezilla et preguntarà on vols guardar la imatge. Seleccionarem la següent:
+       - `local_dev`: per desar la imatge en un dispositiu USB o disc dur extern connectat a la màquina virtual.
+     - Seleccionat `local_dev`:
+       - Connecta el dispositiu USB o unitat externa abans de continuar. A VirtualBox, has d'assignar la unitat al sistema virtual per assegurar que estigui disponible. Si tens problemes per detectar l'unitat USB consulta [aquest document](00-problemes-deteccio-usb-a-MV.md)
+
+       - Un cop connectat, clicka `Enter` per escanejar i detectar els dispositius.
+       - Selecciona el dispositiu de destinació (la unitat USB o disc dur extern).
+       - Navega fins a la carpeta on vols guardar la imatge i selecciona-la.
+     - Clonezilla et demanarà que introdueixis un nom per a la carpeta on es guardarà la imatge. Pots acceptar el nom predeterminat o introduir-ne un de nou.
+     - Mode de treball: selecciona l’opció `Beginner` per fer una configuració més senzilla i evita errors
+     - Selecciona "Save disk" per guardar la imatge completa del disc
+     - Tria el disc font: Clonezilla mostrarà una llista de discos disponibles a la màquina virtual. Selecciona el disc que vols clonar (normalment serà `sda`).
+     - Clonezilla et demanarà diverses opcions per a la configuració d’imatge:
+       - Escull `Skip checking/repairing source file system` (omitir verificació/reparació del sistema de fitxers) per accelerar el procés.
+     - Comença la clonació: Clonezilla crearà la imatge i la guardarà a la destinació seleccionada. Aquest procés pot trigar uns minuts o hores, depenent de la mida del disc.
+     - Un cop finalitzat el procés, Clonezilla et donarà l'opció de reiniciar o apagar el sistema.
+
+- Per al desplegament en massa, configura un servidor **DRBL** per utilitzar Clonezilla en mode multicast, permetent clonar totes les màquines de la sala alhora.
 
 ### B) Preparació de Windows 10 (Sala 2)
 
 1. **Creació de la Màquina Virtual**:
-   - Crea una màquina virtual amb **VirtualBox** o **VMware**, assignant 4 GB de RAM, 2 CPU i un disc dur de 25 GB.
+   - Crea una màquina virtual amb **VirtualBox**, assignant 4 GB de RAM, 2 CPU i un disc dur de 25 GB.
    - Afegeix el fitxer ISO de Windows 10 i inicia la instal·lació.
 
 2. **Instal·lació de Windows 10**:
