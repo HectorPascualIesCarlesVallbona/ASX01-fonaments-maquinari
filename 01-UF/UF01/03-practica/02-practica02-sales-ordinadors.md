@@ -6,72 +6,45 @@
 
 ### Passos per Configurar un Nom de Host Dinàmic amb un Servei de systemd
 
-1. **Crea un Script de Configuració del Nom de Host**
+D’acord, aquí tens els passos per crear el fitxer de servei `systemd` per parts:
 
-   Crea un fitxer d’script per configurar el nom de host i desa’l a `/usr/local/bin/set_hostname.sh`:
+### 1. Crea el Fitxer de Servei
 
-   ```bash
-   sudo nano /usr/local/bin/set_hostname.sh
-   ```
+Primer, crea el fitxer de servei en la ubicació correcta:
 
-   ```bash
-   #!/bin/bash
-   echo "Introdueix el cognom per configurar el nom de host (wildpenguin[Cognom1]):"
-   read COGNOM
-   HOSTNAME="wildpenguin${COGNOM}"
+```bash
+sudo nano /etc/systemd/system/set-hostname.service
+```
 
-   # Estableix el nom de host
-   hostnamectl set-hostname "$HOSTNAME"
-   echo "$HOSTNAME" > /etc/hostname
+Això obrirà l'editor `nano` amb permisos d'administrador per crear el fitxer de servei.
 
-   # Actualitza el fitxer /etc/hosts
-   sed -i "s/127.0.1.1.*/127.0.1.1 $HOSTNAME/" /etc/hosts
+### 2. Afegeix el Contingut del Fitxer
 
-   echo "Nom de host configurat com a $HOSTNAME"
-   ```
+Copia el contingut següent i enganxa’l al fitxer o escriu-lo manualment:
 
-   Assegura’t que l’script tingui permisos d'execució:
+```ini
+[Unit]
+Description=Configura el nom de host la primera vegada
+After=network.target
 
-   ```bash
-   sudo chmod +x /usr/local/bin/set_hostname.sh
-   ```
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/set_hostname.sh
+RemainAfterExit=true
 
-2. **Crea un Servei systemd per Executar l’Script una vegada**
+[Install]
+WantedBy=multi-user.target
+```
 
-   Ara, crea un fitxer de servei de `systemd` per executar aquest script en iniciar el sistema.
+Un cop hagis afegit el contingut, guarda el fitxer:
 
-   Crea el fitxer del servei a `/etc/systemd/system/set-hostname.service` amb el següent contingut:
+1. Prem `Ctrl + O` i després `Enter` per desar els canvis.
+2. Prem `Ctrl + X` per sortir de l'editor.
 
-   ```bash
-    [sudo tee /etc/systemd/system/set-hostname.service > /dev/null <<EOF
+### 3. Activa el Servei
 
-    [Unit]
-    Description=Configura el nom de host la primera vegada
-    After=network.target
+Ara, activa el servei perquè s'executi automàticament en el pròxim inici:
 
-    [Service]
-    Type=oneshot
-    ExecStart=/usr/local/bin/set_hostname.sh
-    RemainAfterExit=true
-
-    [Install]
-    WantedBy=multi-user.target
-    EOF
-
-   ```
-
-   Aquest servei executarà l’script una sola vegada i després es desactivarà.
-
-3. **Activa el Servei per al Primer Inici**
-
-   Activa el servei perquè s'executi quan el sistema arrenqui:
-
-   ```bash
-   sudo systemctl enable set-hostname.service
-   ```
-
-4. **Reinicia i Configura el Nom de Host**
-
-   Quan el sistema arrenqui, el servei demanarà el cognom i configurarà el nom de host amb el format `wildpenguin[Cognom1]`. Un cop configurat, el servei es desactivarà automàticament i ja no tornarà a executar-se en futurs inicis.
-
-Aquest mètode amb `systemd` és més fiable que afegir l’script al perfil de l’usuari, ja que no depèn de la sessió d’usuari i es garantirà que s'executi al primer inici del sistema.
+```bash
+sudo systemctl enable set-hostname.service
+```
