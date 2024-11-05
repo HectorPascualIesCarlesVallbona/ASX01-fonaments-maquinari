@@ -17,8 +17,15 @@
         if [ ! -f /etc/hostname_set ]; then
             echo "Introdueix el teu primer cognom per configurar el nom de host:"
             read COGNOM1
-            HOSTNAME="wildpenguin${COGNOM1}"
+            
+            # Comprova que l'usuari ha introduït un cognom
+            if [ -z "$COGNOM1" ]; then
+                echo "No has introduït cap cognom. Si us plau, torna a intentar-ho."
+                exit 1
+            fi
 
+            HOSTNAME="wildpenguin${COGNOM1}"
+            
             # Configura el nom de host temporalment per a la sessió actual
             hostnamectl set-hostname "$HOSTNAME"
 
@@ -29,7 +36,8 @@
             # Marca l’script com a complet perquè no s’executi de nou
             touch /etc/hostname_set
             echo "Nom de host establert a $HOSTNAME. Reinicia per aplicar els canvis."
-        fi
+        fi                                  
+
     ```
 
 - Fes Executable l'script
