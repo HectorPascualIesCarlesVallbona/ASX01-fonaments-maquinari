@@ -13,15 +13,21 @@
 - Afegeix aquest contingut a l’script. Després desa i tanca
 
     ```bash
-        #!/bin/bash
+       #!/bin/bash
         if [ ! -f /etc/hostname_set ]; then
             echo "Introdueix el teu primer cognom per configurar el nom de host:"
             read COGNOM1
             HOSTNAME="wildpenguin${COGNOM1}"
-            sudo hostnamectl set-hostname "$HOSTNAME"
-            echo "$HOSTNAME" | sudo tee /etc/hostname
-            sudo sed -i "s/127.0.1.1.*/127.0.1.1 $HOSTNAME/" /etc/hosts
-            sudo touch /etc/hostname_set
+
+            # Configura el nom de host temporalment per a la sessió actual
+            hostnamectl set-hostname "$HOSTNAME"
+
+            # Desa el nom de host en els fitxers de configuració
+            echo "$HOSTNAME" > /etc/hostname
+            sed -i "s/127.0.1.1.*/127.0.1.1 $HOSTNAME/" /etc/hosts
+
+            # Marca l’script com a complet perquè no s’executi de nou
+            touch /etc/hostname_set
             echo "Nom de host establert a $HOSTNAME. Reinicia per aplicar els canvis."
         fi
     ```
