@@ -6,19 +6,17 @@
 
 ### Passos per Configurar un Nom de Host Dinàmic amb un Servei de systemd
 
-### 1. Crea el Fitxer de Servei
+1. Crea el Fitxer de Servei
 
-Primer, crea el fitxer de servei en la ubicació correcta:
+Crea el fitxer de servei en la ubicació correcta:
 
 ```bash
 sudo nano /etc/systemd/system/set-hostname.service
 ```
 
-Això obrirà l'editor `nano` amb permisos d'administrador per crear el fitxer de servei.
+2. Afegeix el Contingut del Fitxer
 
-### 2. Afegeix el Contingut del Fitxer
-
-Copia el contingut següent i enganxa’l al fitxer o escriu-lo manualment:
+Copia i pega el contingut següent
 
 ```ini
 [Unit]
@@ -34,19 +32,14 @@ RemainAfterExit=true
 WantedBy=multi-user.target
 ```
 
-Un cop hagis afegit el contingut, guarda el fitxer:
+3. Activa el Servei
 
-1. Prem `Ctrl + O` i després `Enter` per desar els canvis.
-2. Prem `Ctrl + X` per sortir de l'editor.
-
-### 3. Activa el Servei
-
-Ara, activa el servei perquè s'executi automàticament en el pròxim inici:
+Activa el servei perquè s'executi automàticament en el pròxim inici:
 
 ```bash
 sudo systemctl enable set-hostname.service
 ```
 
-### 4. Reinicia i Configura el Nom de Host
+4. Reinicia i Configura el Nom de Host
 
 Quan el sistema arrenqui, el servei demanarà el cognom i configurarà el nom de host amb el format wildpenguin[Cognom1]. Un cop configurat, el servei es desactivarà automàticament i ja no tornarà a executar-se en futurs inicis.
