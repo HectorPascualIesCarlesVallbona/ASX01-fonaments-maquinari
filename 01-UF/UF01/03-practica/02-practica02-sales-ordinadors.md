@@ -4,50 +4,32 @@
 
 ## Personalitza per a OEM
 
-- Obre la terminal i crea un script nou en el directori /etc/profile.d/ per tal que s'executi en el primer inici de sessió
+Utilitza `cloud-init` per Configurar un Usuari Final (Alternativa DIY)
 
-    ```bash
-        sudo nano /etc/profile.d/set_hostname.sh
-    ```
+Amb `cloud-init` per preconfigurar el sistema i permetre que l'usuari final creï el seu propi compte.
 
-- Afegeix aquest contingut a l’script. Després desa i tanca
+1. **Instal·la `cloud-init` (si no està instal·lat)**:
 
-    ```bash
-       #!/bin/bash
-        if [ ! -f /etc/hostname_set ]; then
-            echo "Introdueix el teu primer cognom per configurar el nom de host:"
-            read COGNOM1
-            
-            # Comprova que l'usuari ha introduït un cognom
-            if [ -z "$COGNOM1" ]; then
-                echo "No has introduït cap cognom. Si us plau, torna a intentar-ho."
-                exit 1
-            fi
+   ```bash
+   sudo apt update
+   sudo apt install cloud-init
+   ```
 
-            HOSTNAME="wildpenguin${COGNOM1}"
-            
-            # Configura el nom de host temporalment per a la sessió actual
-            hostnamectl set-hostname "$HOSTNAME"
+2. **Crea un fitxer de configuració per a l'usuari final**:
+   - Crea un fitxer a `/etc/cloud/cloud.cfg.d/99_oem.cfg` amb el següent contingut:
 
-            # Desa el nom de host en els fitxers de configuració
-            echo "$HOSTNAME" > /etc/hostname
-            sed -i "s/127.0.1.1.*/127.0.1.1 $HOSTNAME/" /etc/hosts
+     ```yaml
+     #cloud-config
+     system_info:
+       default_user:
+         name: oem
+         lock_passwd: True
+         gecos: "OEM User"
+         sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+         shell: /bin/bash
+     ```
 
-            # Marca l’script com a complet perquè no s’executi de nou
-            touch /etc/hostname_set
-            echo "Nom de host establert a $HOSTNAME. Reinicia per aplicar els canvis."
-        fi                                  
+3. **Reinicia el Sistema**
+   - En reiniciar, el sistema es configurarà com si fos una instal·lació OEM, i podràs personalitzar la configuració abans de lliurar-la a l'usuari final.
 
-    ```
-
-- Fes Executable l'script
-
-    ```bash
-        sudo chmod +x /etc/profile.d/set_hostname.sh
-    ```
-
-- Com Funciona l'script
-      Quan un usuari iniciï sessió per primera vegada:
-  - L’script demanarà el primer cognom de l'usuari.
-  - El nom de host es crearà amb el format wildpenguin[Cognom1].
-  - El sistema desarà el nou nom de host i evitarà que l’script s’executi en futures iniciades de sessió.
+Aquestes opcions et permetran tenir un sistema preparat per a un usuari final, similar a una instal·lació OEM.
