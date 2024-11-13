@@ -2,11 +2,12 @@
 
 [Sales ordinadors](https://moodle.iescarlesvallbona.cat/pluginfile.php/186525/mod_resource/content/4/Pr%C3%A0ctica%20UF2.pdf)
 
-## Opció Alternativa per a Instal·lació OEM en Ubuntu 24.10
+## Opció Alternativa per a Instal·lació OEM en Ubuntu Desktop 22.04.3 LTS
 
 1. **Utilitza la ISO d'Ubuntu Desktop per a la Instal·lació Normal**
 
-   Descarrega la ISO d'Ubuntu 24.10 Desktop i inicia la instal·lació.
+   Descarrega la ISO `d'Ubuntu Desktop 22.04.3 LTS` i inicia la instal·lació.
+   https://help.ubuntu.com/community/Ubuntu_OEM_Installer_Overview
 
 2. **Crea un Usuari Temporal durant la Instal·lació**
 
@@ -19,80 +20,41 @@
    - Configura els ajustaments del sistema.
    - Personalitza el fons de pantalla o altres configuracions visuals.
 
-4. **Crea un Script de Primer Inici per a l'Usuari Final**
+4. **Preparació d’Imatge de Clonació amb Clonezilla**
+   - Instal.lació Clonezilla:
+     - Descarrega l'última versió de Clonezilla Live en format ISO des de la seva [pàgina oficial](https://clonezilla.org/downloads.php).
 
-   Crea un script que s'executi automàticament en el primer inici per crear el compte de l’usuari final. Aquí tens un exemple d’script que demanarà el nom d'usuari i la contrasenya de l'usuari final:
+   - Adjunta la ISO a la MV:
+     - A VirtualBox, selecciona la MV que vols clonar i vés a **Configuració > Emmagatzematge**.
+     - Afegeix la ISO de Clonezilla com a unitat òptica en IDE fent clic al controlador òptic i seleccionant **Afegeix una imatge de disc òptic**.
+      En VirtualBox, és recomanable afegir la ISO de Clonezilla com a unitat òptica en el controlador IDE. Això és perquè les unitats òptiques solen estar configurades en IDE de manera predeterminada, i alguns sistemes poden tenir problemes per detectar-les correctament si es troben en un controlador SATA.
 
-   - Obre una terminal i crea un fitxer anomenat `firstboot.sh` a la carpeta `/usr/local/bin/`:
+   - Inicia la màquina virtual des de la ISO:
+     - Reinicia la MV. Amb la ISO de Clonezilla adjunta arrencarà directament en Clonezilla.
 
-     ```bash
-     sudo nano /usr/local/bin/firstboot.sh
-     ```
+   - Crea la imatge del sistema:
+     - Selecciona la primera opció per arrencar en mode "Clonezilla live".
+     Aquí tens una guia pas a pas per crear una imatge del sistema amb Clonezilla dins de VirtualBox, detallant totes les
+     - Selecciona l'idioma:
+       - Escull l’idioma amb les fletxes de direcció (en el meu cas, `English`).
+       - A la següent pantalla, selecciona `Keep the default keyboard layout`.
 
-   - Enganxa aquest contingut a l'script:
+     - A la pantalla que diu "Start Clonezilla", selecciona aquesta mateixa per començar.
+     - Selecciona l'opció `device-image` (dispositiu a imatge). Això permet crear una imatge del sistema per guardar-la en un dispositiu extern o una ubicació de xarxa.
+     - Clonezilla et preguntarà on vols guardar la imatge. Seleccionarem la següent:
+       - `local_dev`: per desar la imatge en un dispositiu USB o disc dur extern connectat a la màquina virtual.
+     - Seleccionat `local_dev`:
+       - Connecta el dispositiu USB o unitat externa abans de continuar. A VirtualBox, has d'assignar la unitat al sistema virtual per assegurar que estigui disponible. Si tens problemes per detectar l'unitat USB consulta [aquest document](00-problemes-deteccio-usb-a-MV.md)
 
-     ```bash
-        #!/bin/bash
-        echo "Configuració del compte d'usuari final"
-        read -p "Nom d'usuari: " USERNAME
-        read -s -p "Contrasenya: " PASSWORD
-        echo
-        sudo adduser --disabled-password --gecos "" "$USERNAME"
-        echo "$USERNAME:$PASSWORD" | sudo chpasswd
-        sudo usermod -aG sudo "$USERNAME"
-        echo "Usuari final creat amb èxit!"
+       - Un cop connectat, clicka `Enter` per escanejar i detectar els dispositius.
+       - Selecciona el dispositiu de destinació (la unitat USB o disc dur extern).
+       - Navega fins a la carpeta on vols guardar la imatge i selecciona-la.
+     - Clonezilla et demanarà que introdueixis un nom per a la carpeta on es guardarà la imatge. Pots acceptar el nom predeterminat o introduir-ne un de nou.
+     - Mode de treball: selecciona l’opció `Beginner` per fer una configuració més senzilla i evita errors
+     - Selecciona "Save disk" per guardar la imatge completa del disc
+     - Tria el disc font: Clonezilla mostrarà una llista de discos disponibles a la màquina virtual. Selecciona el disc que vols clonar (normalment serà `sda`).
+     - Clonezilla et demanarà diverses opcions per a la configuració d’imatge:
+       - Escull `Skip checking/repairing source file system` (omitir verificació/reparació del sistema de fitxers) per accelerar el procés.
+     - Comença la clonació: Clonezilla crearà la imatge i la guardarà a la destinació seleccionada. Aquest procés pot trigar uns minuts o hores, depenent de la mida del disc.
+     - Un cop finalitzat el procés, Clonezilla et donarà l'opció de reiniciar o apagar el sistema.
 
-        # Configura el nom de host
-        echo "Introdueix el cognom per configurar el nom de host (wildpenguin[Cognom1]):"
-        read COGNOM
-        HOSTNAME="wildpenguin${COGNOM}"
-
-        # Estableix el nom de host
-        sudo hostnamectl set-hostname "$HOSTNAME"
-        echo "$HOSTNAME" | sudo tee /etc/hostname
-
-        # Actualitza el fitxer /etc/hosts
-        sudo sed -i "s/127.0.1.1.*/127.0.1.1 $HOSTNAME/" /etc/hosts
-        echo "Nom de host configurat com a $HOSTNAME"
-
-        # Desactiva el servei després d'executar-se
-        sudo systemctl disable firstboot.service
-        sudo rm -- "$0"
-     ```
-
-5. **Configura un Servei de `systemd` per Executar l'Script de Primer Inici**
-
-   Crea un servei de `systemd` per executar l'script en el primer inici i després eliminar-se:
-
-- Crea el fitxer de servei:
-
-     ```bash
-     sudo nano /etc/systemd/system/firstboot.service
-     ```
-
-- Enganxa aquest contingut:
-
-     ```ini
-     [Unit]
-     Description=Configuració de l'usuari final en el primer inici
-
-     [Service]
-     Type=oneshot
-     ExecStart=/usr/local/bin/firstboot.sh
-     RemainAfterExit=true
-
-     [Install]
-     WantedBy=multi-user.target
-     ```
-
-6. **Activa el Servei**
-
-   Activa el servei perquè s'executi en el primer inici:
-
-   ```bash
-   sudo systemctl enable firstboot.service
-   ```
-
-7. **Apaga el Sistema i lliura'l a l'Usuari Final**
-
-   En el primer inici, l'script de `firstboot.sh` s'executarà i demanarà al nou usuari que introdueixi el seu nom d'usuari i la contrasenya. Després d’això, el servei i l'script s'eliminaran automàticament.

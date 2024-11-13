@@ -19,3 +19,7 @@
 # 23102024
 
 - continuació pràctica programari
+
+# 13112024
+- explicar quina versió ubuntu amb OEM
+- explicar que s'ha de fer la clonació amb Clonezilla
