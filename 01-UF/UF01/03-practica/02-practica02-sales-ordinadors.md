@@ -54,7 +54,6 @@
      - Selecciona "Save disk" per guardar la imatge completa del disc
      - Tria el disc font: Clonezilla mostrarà una llista de discos disponibles a la màquina virtual. Selecciona el disc que vols clonar (normalment serà `sda`).
      - Clonezilla et demanarà diverses opcions per a la configuració d’imatge:
-       - Escull `Skip checking/repairing source file system` (omitir verificació/reparació del sistema de fitxers) per accelerar el procés.
      - Comença la clonació: Clonezilla crearà la imatge i la guardarà a la destinació seleccionada. Aquest procés pot trigar uns minuts o hores, depenent de la mida del disc.
      - Un cop finalitzat el procés, Clonezilla et donarà l'opció de reiniciar o apagar el sistema.
 
