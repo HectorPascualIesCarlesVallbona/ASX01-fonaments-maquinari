@@ -23,3 +23,8 @@
 # 13112024
 - explicar quina versió ubuntu amb OEM
 - explicar que s'ha de fer la clonació amb Clonezilla
+
+# 20112024
+- revisar pràctica clonezilla
+- continuar pràctica següent
+

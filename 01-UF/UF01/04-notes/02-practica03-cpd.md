@@ -8,7 +8,7 @@
 
 L'entorn de proves tindrà tres màquines virtuals:
 
-- Un **servidor DRBL** per gestionar la clonació en mode multicast.
+- Un [**servidor DRBL**](02-practica03-DRBL.md) per gestionar la clonació en mode multicast.
 - Dos **clients** que rebran la imatge clonada d'Ubuntu.
 
 #### 1.1 Configuració del Servidor DRBL
