@@ -20,7 +20,7 @@ L'entorn de proves tindrà tres màquines virtuals:
    - **Recursos**: Assigna 4 GB de RAM, 2 CPU i un disc dur de 20 GB per garantir un rendiment adequat.
 
 2. **Instal·lació del Sistema Operatiu (Ubuntu o DRBL Live)**:
-   - Inicia la màquina virtual i carrega la ISO d'Ubuntu o DRBL Live.
+   - Inicia la màquina virtual i carrega la ISO d'DRBL Live.
    - Segueix el procés d'instal·lació fins a completar-lo i després reinicia la màquina virtual.
 
 3. **Instal·lació de DRBL i Clonezilla en Ubuntu**:
