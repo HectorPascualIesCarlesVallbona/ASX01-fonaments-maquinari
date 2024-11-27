@@ -6,7 +6,7 @@ El PXE (Preebot Execution Environment), és un entorn per arrancar i instalar si
 ## **2. Multicasting**
 El multicasting és una tècnica utilitzada per enviar una còpia d'una imatge de disc a múltiples màquines clients de manera simultània, utilitzant un únic flux de dades per a totes les màquines. Això permet clonar diverses màquines alhora de forma eficient, estalviant temps i ample de banda en comparació amb altres mètodes com l'unicast (un flux per màquina).
 
-## **3. Start DRBL**
+## **3. DRBL**
 DRBL (Diskless Remote Boot in Linux) és una eina que permet als clients arrencar sistemes operatius i utilitzar serveis sense necessitat d'un disc dur local. En aquesta opció:
 
 Proporciona serveis d’arrencada remota per als clients.
