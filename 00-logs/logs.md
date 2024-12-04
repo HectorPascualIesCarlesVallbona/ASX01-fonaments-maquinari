@@ -26,5 +26,6 @@
 
 # 04122024
 - entrega pràctica DRBL
+- explicar RA01
 - parlar examen
 
