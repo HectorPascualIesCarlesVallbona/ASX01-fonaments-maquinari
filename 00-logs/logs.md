@@ -1,10 +1,8 @@
 # 24092024
-
 - video introductori sobre sistemes informàtics
 - crear portfoli
 
 # 02102024
-
 - video
 - mostrar teoria video
 - mostrar teoria arquitectura
@@ -12,12 +10,10 @@
 - pràctica
 
 # 16102024
-
 - video RA02
 - pràctica RA02
 
 # 23102024
-
 - continuació pràctica programari
 
 # 13112024
@@ -27,4 +23,8 @@
 # 20112024
 - revisar pràctica clonezilla
 - continuar pràctica següent
+
+# 04122024
+- entrega pràctica DRBL
+- parlar examen
 
