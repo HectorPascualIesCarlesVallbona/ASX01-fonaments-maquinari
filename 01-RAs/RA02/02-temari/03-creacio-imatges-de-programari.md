@@ -1,32 +1,32 @@
-# 3. Creació d’Imatges de Programari. Suport del Programari Bàsic d’un Sistema
+# 1. Creació d’Imatges de Programari. Suport del Programari Bàsic d’un Sistema
 
 ## Índex
 
-- [3. Creació d’Imatges de Programari. Suport del Programari Bàsic d’un Sistema](#3-creació-dimatges-de-programari-suport-del-programari-bàsic-dun-sistema)
+- [1. Creació d’Imatges de Programari. Suport del Programari Bàsic d’un Sistema](#1-creació-dimatges-de-programari-suport-del-programari-bàsic-dun-sistema)
   - [Índex](#índex)
   - [Introducció](#introducció)
     - [Recursos per ampliar](#recursos-per-ampliar)
-  - [3.1 Partició de Disc](#31-partició-de-disc)
+  - [1.1 Partició de Disc](#11-partició-de-disc)
       - [Definició i Importància](#definició-i-importància)
     - [Tipus de Particions](#tipus-de-particions)
       - [Sistemes de Fitxers](#sistemes-de-fitxers)
     - [Comandes d'Ús](#comandes-dús)
-  - [3.2 Imatges de Suport](#32-imatges-de-suport)
+  - [1.2 Imatges de Suport](#12-imatges-de-suport)
       - [Què són les Imatges de Suport?](#què-són-les-imatges-de-suport)
     - [Tipus d’Imatges](#tipus-dimatges)
       - [Eines per Crear Imatges](#eines-per-crear-imatges)
-  - [3.3 Opcions d’Arrencada d’un Sistema](#33-opcions-darrencada-dun-sistema)
+  - [1.3 Opcions d’Arrencada d’un Sistema](#13-opcions-darrencada-dun-sistema)
       - [Funció de les Opcions d’Arrencada](#funció-de-les-opcions-darrencada)
     - [Gestors d’Arrencada](#gestors-darrencada)
       - [Configuració Avançada](#configuració-avançada)
-  - [3.4 Creació d’Imatges](#34-creació-dimatges)
+  - [1.4 Creació d’Imatges](#14-creació-dimatges)
       - [Processos de Creació](#processos-de-creació)
     - [Eines Recomanades](#eines-recomanades)
       - [Exemple de Configuració](#exemple-de-configuració)
-  - [3.5 Recuperació d’Imatges](#35-recuperació-dimatges)
+  - [1.5 Recuperació d’Imatges](#15-recuperació-dimatges)
       - [Procés de Recuperació](#procés-de-recuperació)
     - [Eines per a la Restauració](#eines-per-a-la-restauració)
-  - [3.6 Videos tutorials](#36-videos-tutorials)
+  - [1.6 Videos tutorials](#16-videos-tutorials)
 
 ---
 
@@ -44,7 +44,7 @@ La creació d’imatges de programari és fonamental per a la gestió, clonació
 
 ---
 
-## 3.1 Partició de Disc
+## 1.1 Partició de Disc
 
 #### Definició i Importància
 
@@ -105,7 +105,7 @@ Els sistemes de fitxers organitzen i gestionen les dades en una partició. Aques
 
 ---
 
-## 3.2 Imatges de Suport
+## 1.2 Imatges de Suport
 
 #### Què són les Imatges de Suport?
 
@@ -146,7 +146,7 @@ Les imatges de suport són còpies exactes d’una partició o d'un disc complet
 
 ---
 
-## 3.3 Opcions d’Arrencada d’un Sistema
+## 1.3 Opcions d’Arrencada d’un Sistema
 
 #### Funció de les Opcions d’Arrencada
 
@@ -178,7 +178,7 @@ Les opcions d’arrencada defineixen el sistema operatiu que es carregarà en en
 
 ---
 
-## 3.4 Creació d’Imatges
+## 1.4 Creació d’Imatges
 
 #### Processos de Creació
 
@@ -208,7 +208,7 @@ sudo dd if=/dev/sda of=/mnt/backup.img bs=4M
 
 ---
 
-## 3.5 Recuperació d’Imatges
+## 1.5 Recuperació d’Imatges
 
 #### Procés de Recuperació
 
@@ -226,7 +226,7 @@ La restauració d’imatges és crucial per a la recuperació de desastres. Aque
   
 ![Diagrama de restauració amb Clonezilla](https://www.backup-utility.com/screenshot/cloning-clonezilla.jpg)
 
-## 3.6 Videos tutorials
+## 1.6 Videos tutorials
 
 Aquí teniu 2 vídeos que proporcionen guies pràctiques per gestionar particions, crear imatges de discs i restaurar sistemes en Linux.
 

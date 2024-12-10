@@ -1,37 +1,37 @@
-# 4. Implantació de maquinari en centres de processament de dades (CPD)
+# 1. Implantació de maquinari en centres de processament de dades (CPD)
 
 ## Índex
 
-- [4. Implantació de maquinari en centres de processament de dades (CPD)](#4-implantació-de-maquinari-en-centres-de-processament-de-dades-cpd)
+- [1. Implantació de maquinari en centres de processament de dades (CPD)](#4-implantació-de-maquinari-en-centres-de-processament-de-dades-cpd)
   - [Índex](#índex)
-    - [4.1 Arquitectura d’ordinadors personals, sistemes departamentals i grans ordinadors](#41-arquitectura-dordinadors-personals-sistemes-departamentals-i-grans-ordinadors)
+    - [1.1 Arquitectura d’ordinadors personals, sistemes departamentals i grans ordinadors](#41-arquitectura-dordinadors-personals-sistemes-departamentals-i-grans-ordinadors)
       - [**Ordinadors personals (PC):**](#ordinadors-personals-pc)
       - [**Sistemes departamentals (servidors):**](#sistemes-departamentals-servidors)
       - [**Grans ordinadors (mainframes):**](#grans-ordinadors-mainframes)
-    - [4.2 Estructura d’un CPD. Organització](#42-estructura-dun-cpd-organització)
+    - [1.2 Estructura d’un CPD. Organització](#42-estructura-dun-cpd-organització)
       - [**Components físics principals:**](#components-físics-principals)
       - [**Organització funcional:**](#organització-funcional)
-    - [4.3 Seguretat física](#43-seguretat-física)
+    - [1.3 Seguretat física](#43-seguretat-física)
       - [**Aspectes clau de la seguretat física:**](#aspectes-clau-de-la-seguretat-física)
-    - [4.4 Components específics en solucions empresarials: bastidors o racks, dispositius de connexió en calent, discos, fonts d’alimentació, control remot](#44-components-específics-en-solucions-empresarials-bastidors-o-racks-dispositius-de-connexió-en-calent-discos-fonts-dalimentació-control-remot)
+    - [1.4 Components específics en solucions empresarials: bastidors o racks, dispositius de connexió en calent, discos, fonts d’alimentació, control remot](#44-components-específics-en-solucions-empresarials-bastidors-o-racks-dispositius-de-connexió-en-calent-discos-fonts-dalimentació-control-remot)
       - [**Bastidors o racks:**](#bastidors-o-racks)
       - [**Dispositius de connexió en calent (hot-swap):**](#dispositius-de-connexió-en-calent-hot-swap)
       - [**Discos durs i SSD:**](#discos-durs-i-ssd)
       - [**Fonts d’alimentació redundants:**](#fonts-dalimentació-redundants)
       - [**Control remot:**](#control-remot)
-    - [4.5 Arquitectures d’alta disponibilitat](#45-arquitectures-dalta-disponibilitat)
+    - [1.5 Arquitectures d’alta disponibilitat](#45-arquitectures-dalta-disponibilitat)
       - [**Conceptes bàsics d’alta disponibilitat:**](#conceptes-bàsics-dalta-disponibilitat)
       - [**Clústers de servidors:**](#clústers-de-servidors)
       - [**Redundància de xarxa:**](#redundància-de-xarxa)
       - [**Balanceig de càrrega:**](#balanceig-de-càrrega)
-    - [4.6 Inventariat de maquinari](#46-inventariat-de-maquinari)
+    - [1.6 Inventariat de maquinari](#46-inventariat-de-maquinari)
       - [**Sistemes d'inventari automatitzats:**](#sistemes-dinventari-automatitzats)
       - [**Seguiment del cicle de vida del maquinari:**](#seguiment-del-cicle-de-vida-del-maquinari)
       - [**Inventariat de maquinari crític:**](#inventariat-de-maquinari-crític)
 
 ---
 
-### 4.1 Arquitectura d’ordinadors personals, sistemes departamentals i grans ordinadors
+### 1.1 Arquitectura d’ordinadors personals, sistemes departamentals i grans ordinadors
 
 L'arquitectura del maquinari utilitzat en els centres de processament de dades varia significativament segons el tipus de sistema utilitzat. Els tres tipus principals són els ordinadors personals (PC), els sistemes departamentals i els grans ordinadors o mainframes. Cadascun d’aquests sistemes està dissenyat per servir funcions específiques dins d’un CPD.
 
@@ -84,7 +84,7 @@ Els mainframes són utilitzats per institucions financeres com bancs, que confie
 
 ---
 
-### 4.2 Estructura d’un CPD. Organització
+### 1.2 Estructura d’un CPD. Organització
 
 La infraestructura i organització d’un CPD és crucial per assegurar-ne el funcionament eficient i segur. Un CPD ben dissenyat proporciona una estructura flexible que permet el creixement, la gestió eficient de l’energia, la refrigeració i la seguretat, tant a nivell físic com lògic.
 
@@ -123,7 +123,7 @@ La infraestructura i organització d’un CPD és crucial per assegurar-ne el fu
 
 ---
 
-### 4.3 Seguretat física
+### 1.3 Seguretat física
 
 La seguretat física és un aspecte crucial en la gestió d'un CPD. La seva finalitat és garantir la protecció dels equips i les dades contra accessos no autoritzats, desastres naturals, i altres amenaces externes. La seguretat física no només inclou la protecció contra atacs externs, sinó també la protecció contra fallades internes, incendis i altres incidents que poden comprometre la integritat dels equips.
 
@@ -156,7 +156,7 @@ Les sales de servidors han de mantenir condicions ambientals òptimes per evitar
 
 ---
 
-### 4.4 Components específics en solucions empresarials: bastidors o racks, dispositius de connexió en calent, discos, fonts d’alimentació, control remot
+### 1.4 Components específics en solucions empresarials: bastidors o racks, dispositius de connexió en calent, discos, fonts d’alimentació, control remot
 
 Un CPD està format per una sèrie de components específics dissenyats per maximitzar l'eficiència, la flexibilitat i la fiabilitat del centre. Aquests components estan optimitzats per a entorns empresarials on el rendiment i la disponibilitat contínua són essencials.
 
@@ -197,7 +197,7 @@ Els sistemes de control remot com l’IPMI (Intelligent Platform Management Inte
 
 ---
 
-### 4.5 Arquitectures d’alta disponibilitat
+### 1.5 Arquitectures d’alta disponibilitat
 
 Les arquitectures d'alta disponibilitat (HA) són fon
 
@@ -234,7 +234,7 @@ El balanceig de càrrega és una altra tècnica important en les arquitectures H
 
 ---
 
-### 4.6 Inventariat de maquinari
+### 1.6 Inventariat de maquinari
 
 La gestió del maquinari en un CPD és un procés crític per garantir que tots els recursos estan disponibles, en bon estat i correctament configurats. Un bon sistema d’inventariat permet identificar, supervisar i mantenir tot l'equipament físic dins del CPD, cosa que facilita les tasques de manteniment i planificació d’actualitzacions.
 
