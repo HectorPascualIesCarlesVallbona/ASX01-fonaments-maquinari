@@ -1,8 +1,8 @@
-# 1. Creació d’Imatges de Programari. Suport del Programari Bàsic d’un Sistema
+# Creació d’Imatges de Programari. Suport del Programari Bàsic d’un Sistema
 
 ## Índex
 
-- [1. Creació d’Imatges de Programari. Suport del Programari Bàsic d’un Sistema](#1-creació-dimatges-de-programari-suport-del-programari-bàsic-dun-sistema)
+- [Creació d’Imatges de Programari. Suport del Programari Bàsic d’un Sistema](#creació-dimatges-de-programari-suport-del-programari-bàsic-dun-sistema)
   - [Índex](#índex)
   - [Introducció](#introducció)
     - [Recursos per ampliar](#recursos-per-ampliar)

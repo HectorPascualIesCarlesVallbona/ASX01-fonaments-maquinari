@@ -1,33 +1,71 @@
-# 1. Implantació de maquinari en centres de processament de dades (CPD)
+# Implantació de maquinari en centres de processament de dades (CPD)
 
 ## Índex
 
-- [1. Implantació de maquinari en centres de processament de dades (CPD)](#4-implantació-de-maquinari-en-centres-de-processament-de-dades-cpd)
+- [Implantació de maquinari en centres de processament de dades (CPD)](#implantació-de-maquinari-en-centres-de-processament-de-dades-cpd)
   - [Índex](#índex)
-    - [1.1 Arquitectura d’ordinadors personals, sistemes departamentals i grans ordinadors](#41-arquitectura-dordinadors-personals-sistemes-departamentals-i-grans-ordinadors)
+   - [1.0 Intro: Què és un CPD](#10-intro:que-es-un-cpd)
+    - [1.1 Arquitectura d’ordinadors personals, sistemes departamentals i grans ordinadors](#11-arquitectura-dordinadors-personals-sistemes-departamentals-i-grans-ordinadors)
       - [**Ordinadors personals (PC):**](#ordinadors-personals-pc)
       - [**Sistemes departamentals (servidors):**](#sistemes-departamentals-servidors)
       - [**Grans ordinadors (mainframes):**](#grans-ordinadors-mainframes)
-    - [1.2 Estructura d’un CPD. Organització](#42-estructura-dun-cpd-organització)
+    - [1.2 Estructura d’un CPD. Organització](#12-estructura-dun-cpd-organització)
       - [**Components físics principals:**](#components-físics-principals)
       - [**Organització funcional:**](#organització-funcional)
-    - [1.3 Seguretat física](#43-seguretat-física)
+    - [1.3 Seguretat física](#13-seguretat-física)
       - [**Aspectes clau de la seguretat física:**](#aspectes-clau-de-la-seguretat-física)
-    - [1.4 Components específics en solucions empresarials: bastidors o racks, dispositius de connexió en calent, discos, fonts d’alimentació, control remot](#44-components-específics-en-solucions-empresarials-bastidors-o-racks-dispositius-de-connexió-en-calent-discos-fonts-dalimentació-control-remot)
+    - [1.4 Components específics en solucions empresarials: bastidors o racks, dispositius de connexió en calent, discos, fonts d’alimentació, control remot](#14-components-específics-en-solucions-empresarials-bastidors-o-racks-dispositius-de-connexió-en-calent-discos-fonts-dalimentació-control-remot)
       - [**Bastidors o racks:**](#bastidors-o-racks)
       - [**Dispositius de connexió en calent (hot-swap):**](#dispositius-de-connexió-en-calent-hot-swap)
       - [**Discos durs i SSD:**](#discos-durs-i-ssd)
       - [**Fonts d’alimentació redundants:**](#fonts-dalimentació-redundants)
       - [**Control remot:**](#control-remot)
-    - [1.5 Arquitectures d’alta disponibilitat](#45-arquitectures-dalta-disponibilitat)
+    - [1.5 Arquitectures d’alta disponibilitat](#15-arquitectures-dalta-disponibilitat)
       - [**Conceptes bàsics d’alta disponibilitat:**](#conceptes-bàsics-dalta-disponibilitat)
       - [**Clústers de servidors:**](#clústers-de-servidors)
       - [**Redundància de xarxa:**](#redundància-de-xarxa)
       - [**Balanceig de càrrega:**](#balanceig-de-càrrega)
-    - [1.6 Inventariat de maquinari](#46-inventariat-de-maquinari)
+    - [1.6 Inventariat de maquinari](#16-inventariat-de-maquinari)
       - [**Sistemes d'inventari automatitzats:**](#sistemes-dinventari-automatitzats)
       - [**Seguiment del cicle de vida del maquinari:**](#seguiment-del-cicle-de-vida-del-maquinari)
       - [**Inventariat de maquinari crític:**](#inventariat-de-maquinari-crític)
+
+---
+
+### 1.0 Intro: Què és un CPD
+Un **CPD (Centre de Processament de Dades)** és una instal·lació física o virtual on s'ubiquen els sistemes informàtics i els components relacionats, com ara servidors, sistemes d'emmagatzematge de dades, equips de xarxa i altres infraestructures essencials per a la gestió, emmagatzematge, i processament de grans volums d'informació.
+
+#### Característiques principals d'un CPD
+1. **Infraestructura física**:
+   - Inclou servidors, sistemes d'alimentació, sistemes de refrigeració, racks, i altres equips físics necessaris.
+   - Sovint compta amb mesures de seguretat com portes blindades, sistemes de videovigilància i control d'accés.
+
+2. **Alta disponibilitat**:
+   - Un CPD està dissenyat per mantenir els serveis actius fins i tot en cas de fallades. Això s'aconsegueix mitjançant redundància de maquinari i alimentació.
+
+3. **Gestió de dades**:
+   - Serveix per emmagatzemar, protegir i processar dades de manera eficient i segura. Això inclou bases de dades, servidors web, sistemes ERP i altres aplicacions.
+
+4. **Connectivitat**:
+   - Disposa d'una infraestructura de xarxa robusta per garantir una comunicació fiable i d'alta velocitat entre els sistemes i amb altres ubicacions.
+
+5. **Sistemes de refrigeració i climatització**:
+   - Per evitar sobreescalfaments, els CPD inclouen sistemes especialitzats per mantenir la temperatura i la humitat en nivells òptims.
+
+6. **Seguretat física i digital**:
+   - Compten amb mesures contra amenaces físiques (incendis, inundacions) i cibernètiques (atacs DDoS, malware).
+
+#### Tipus de CPD
+1. **In-house CPD**: Infraestructura gestionada directament per una organització a les seves pròpies instal·lacions.
+2. **Colocation CPD**: Infraestructura allotjada en un centre extern que ofereix serveis d'allotjament per equips d'altres empreses.
+3. **Cloud CPD**: Infraestructura virtualitzada a través de serveis de núvol (com AWS, Azure, Google Cloud).
+4. **Híbrid**: Una combinació d'infraestructura pròpia i serveis en núvol.
+
+#### Usos típics d'un CPD
+- **Hosting de servidors i aplicacions**: Per suportar serveis com correu electrònic, sistemes ERP, o aplicacions web.
+- **Emmagatzematge massiu de dades**: Amb capacitat per gestionar Big Data.
+- **Processament d'alta capacitat**: Per a simulacions, anàlisi de dades o projectes científics.
+- **Recuperació davant desastres**: Per garantir que la informació i els serveis estiguin disponibles fins i tot després d'una fallada o emergència.
 
 ---
 
@@ -47,7 +85,7 @@ Els ordinadors personals són sistemes informàtics individuals que sovint es fa
 - En clústers, poden ser controlats remotament per maximitzar el rendiment computacional.
 
 **Exemples d’ús:**
-Els PC són utilitzats freqüentment en entorns de CPD com a nodes de càlcul en projectes de computació distribuïda o com a terminals d'accés per al personal tècnic. Un exemple destacat és el projecte SETI@home, que utilitza ordinadors personals arreu del món per analitzar dades astronòmiques en busca de senyals d’intel·ligència extraterrestre.
+Els PC són utilitzats freqüentment en entorns de CPD com a nodes de càlcul en projectes de computació distribuïda o com a terminals d'accés per al personal tècnic. Un exemple destacat és el projecte [SETI@home](https://setiathome.berkeley.edu/), que utilitza ordinadors personals arreu del món per analitzar dades astronòmiques en busca de senyals d’intel·ligència extraterrestre.
 
 #### **Sistemes departamentals (servidors):**
 
@@ -199,9 +237,7 @@ Els sistemes de control remot com l’IPMI (Intelligent Platform Management Inte
 
 ### 1.5 Arquitectures d’alta disponibilitat
 
-Les arquitectures d'alta disponibilitat (HA) són fon
-
-amentals en un CPD per assegurar que els serveis crítics estiguin disponibles fins i tot en cas de fallades del sistema o interrupcions imprevistes. Aquests sistemes estan dissenyats per minimitzar el temps d'inactivitat i garantir la continuïtat del servei.
+Les arquitectures d'alta disponibilitat (HA) són fonamentals en un CPD per assegurar que els serveis crítics estiguin disponibles fins i tot en cas de fallades del sistema o interrupcions imprevistes. Aquests sistemes estan dissenyats per minimitzar el temps d'inactivitat i garantir la continuïtat del servei.
 
 #### **Conceptes bàsics d’alta disponibilitat:**
 
