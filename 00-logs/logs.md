@@ -29,3 +29,8 @@
 - explicar RA01
 - parlar examen
 
+# 11122024
+- presentar manual DRBL a alumnes
+- explicar temari examen
+- següent classe explicacions
+
