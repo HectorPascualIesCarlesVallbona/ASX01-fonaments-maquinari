@@ -16,7 +16,7 @@ En aquesta pràctica, aprendràs a:
 
 ### **1. Creació i Gestió de Particions**
 1. **Inicialitza un disc virtual nou**:
-   - Crea un disc nou de **10 GB** en VirtualBox (nom: `disc-secundari.vdi`).
+   - Crea un disc nou de **25 GB** en VirtualBox (nom: `disc-secundari.vdi`).
    - Afegeix-lo a una màquina virtual Ubuntu.
 
 2. **Gestiona les particions**:
@@ -78,7 +78,7 @@ En aquesta pràctica, aprendràs a:
    - Restaura el disc complet des de la imatge prèviament creada.
 
 ## **Entrega**
-- Documenta tot el procés amb captures de pantalla de cada pas.
+- Documenta tot el procés amb **captures de pantalla de cada pas i cada punt** demanat a la pràctica junt amb text
 - Adjunta els següents fitxers:
   - Hash de la imatge creada amb `dd`.
   - Captura del resultat de `lsblk` després de la restauració.
@@ -88,6 +88,11 @@ En aquesta pràctica, aprendràs a:
 2. Generació d'imatges amb `dd` i Clonezilla.
 3. Restauració efectiva de les imatges creades.
 4. Documentació clara i detallada amb captures de pantalla.
+  - portada: nom, cognom, data, mòdul
+  - index
+  - introducció
+  - desenvolupament
+  - conclusions
 
 ## **Recursos Addicionals**
 - [Guia d’ús de `dd` a Linux](https://www.geeksforgeeks.org/dd-command-in-linux-with-examples/)
