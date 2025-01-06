@@ -16,7 +16,7 @@ En aquesta pràctica, aprendràs a:
 
 ### **1. Creació i Gestió de Particions**
 1. **Inicialitza un disc virtual nou**:
-   - Crea un disc nou de **25 GB** en VirtualBox (nom: `disc-secundari.vdi`).
+   - Crea un disc nou de **10 GB** en VirtualBox (nom: `disc-secundari.vdi`).
    - Afegeix-lo a una màquina virtual Ubuntu.
 
 2. **Gestiona les particions**:
