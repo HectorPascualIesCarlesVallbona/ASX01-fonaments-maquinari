@@ -1,99 +1,101 @@
-## Pràctica: **Gestió de Particions i Creació d’Imatges de Disc amb Clonezilla i dd**
+## Pràctica: **Gestió Avançada de Particions**
 
 ### **Objectius**
-En aquesta pràctica, aprendràs a:
-1. Crear particions en un disc dur.
-2. Gestionar sistemes de fitxers a les particions.
-3. Crear imatges de seguretat del disc amb Clonezilla i `dd`.
-4. Restaurar imatges per recuperar sistemes en cas de fallida.
+Aquesta pràctica té com a objectiu que aprenguis a:
+1. Crear i gestionar particions en un disc dur virtual.
+2. Donar format i configurar sistemes de fitxers a les particions.
+3. Montar i desmuntar particions utilitzant exclusivament codi.
+4. Configurar particions perquè es muntin automàticament al sistema mitjançant fitxers de configuració.
+5. Analitzar el rendiment de diferents sistemes de fitxers.
 
-## **Materials Necessaris**
+### **Materials Necessaris**
 - **Ordinador amb VirtualBox** instal·lat.
-- **ISO de Clonezilla Live** (descarregable a [clonezilla.org](https://clonezilla.org/)).
-- **Sistema Operatiu Ubuntu 22.04** (com a màquina virtual).
+- **Sistema Operatiu Ubuntu 22.04** configurat en una màquina virtual.
+- Disc secundari anomenat **disc-secundari.vdi** creat dins de VirtualBox.
 
-## **Fases de la Pràctica**
+---
 
-### **1. Creació i Gestió de Particions**
-1. **Inicialitza un disc virtual nou**:
-   - Crea un disc nou de **10 GB** en VirtualBox (nom: `disc-secundari.vdi`).
-   - Afegeix-lo a una màquina virtual Ubuntu.
+### **Fases de la Pràctica**
 
-2. **Gestiona les particions**:
-   - Arrenca la màquina virtual i accedeix al terminal.
-   - Executa `fdisk` per gestionar les particions del nou disc:
-     ```bash
-     sudo fdisk /dev/sdb
-     ```
-   - Crea:
-     - 1 **partició primària** de 5 GB.
-     - 1 **partició lògica** de la resta de l'espai dins d'una partició estesa.
-   - Verifica amb:
-     ```bash
-     sudo lsblk
-     ```
+#### **1. Creació i Configuració Inicial del Disc**
+1. Crea un disc virtual nou de **10 GB** dins de VirtualBox amb el nom **disc-secundari.vdi** i afegeix-lo com a disc secundari a la màquina virtual Ubuntu.
+2. Verifica que el disc està disponible al sistema.
 
-3. **Dóna format a les particions**:
-   - Formata la partició primària en **ext4**:
-     ```bash
-     sudo mkfs.ext4 /dev/sdb1
-     ```
-   - Formata la partició lògica en **NTFS**:
-     ```bash
-     sudo mkfs.ntfs /dev/sdb5
-     ```
+---
 
-### **2. Creació d’Imatges de Disc**
+#### **2. Creació de Particions**
+1. Utilitza eines per gestionar les particions del disc secundari.
+2. Segueix aquestes especificacions per al disseny de particions:
+   - **Partició 1**: 4 GB, format ext4.
+   - **Partició 2**: 4 GB, format NTFS.
+   - Espai restant: partició de swap.
 
-1. **Creació d'una imatge amb `dd`**:
-   - Crea una imatge bit a bit de la partició `/dev/sdb1`:
-     ```bash
-     sudo dd if=/dev/sdb1 of=~/imatges/particio1_backup.img bs=4M
-     ```
-   - Observa el temps i l’espai ocupat.
+3. Documenta els passos per verificar que les particions han estat creades correctament.
 
-2. **Verifica la integritat de la imatge**:
-   - Utilitza la comanda `md5sum` per generar el hash:
-     ```bash
-     md5sum ~/imatges/particio1_backup.img
-     ```
+---
 
-3. **Creació d'una imatge amb Clonezilla**:
-   - Arrenca la màquina virtual des de l'ISO de Clonezilla.
-   - Selecciona **"device-image"** > **"Beginner mode"**.
-   - Desa una imatge de tot el disc `/dev/sdb` a la carpeta `/home/particions/clonezilla/`.
+#### **3. Formatació i Preparació de les Particions**
+1. Aplica el sistema de fitxers adequat a cada partició:
+   - ext4 a la primera partició.
+   - NTFS a la segona partició.
+   - Activa l’espai de swap a l'última partició.
+2. Comprova que cada partició està preparada per ser utilitzada.
 
-### **3. Restauració d’Imatges**
+---
 
-1. **Restauració amb `dd`**:
-   - Elimina la partició original amb `fdisk`.
-   - Restaura la partició des de la imatge creada:
-     ```bash
-     sudo dd if=~/imatges/particio1_backup.img of=/dev/sdb1 bs=4M
-     ```
+#### **4. Muntatge i Desmuntatge de Particions**
+1. Munta les particions de manera manual a punts de muntatge especificats.
+2. Documenta com verificar que les particions estan correctament muntades.
+3. Desmunta totes les particions de manera manual.
 
-2. **Restauració amb Clonezilla**:
-   - Arrenca amb Clonezilla Live.
-   - Selecciona **"device-image"** > **"Beginner mode"** > **"Restore"**.
-   - Restaura el disc complet des de la imatge prèviament creada.
+---
 
-## **Entrega**
-- Documenta tot el procés amb **captures de pantalla de cada pas i cada punt** demanat a la pràctica junt amb text
-- Adjunta els següents fitxers:
-  - Hash de la imatge creada amb `dd`.
-  - Captura del resultat de `lsblk` després de la restauració.
+#### **5. Configuració Automàtica del Muntatge**
+1. Configura el fitxer de configuració del sistema per tal que les particions es muntin automàticament a l'inici del sistema.
+2. Assegura't que les particions es munten de manera automàtica i estable.
 
-## **Criteris d'Avaluació**
-1. Creació correcta de particions amb `fdisk` i formatació.
-2. Generació d'imatges amb `dd` i Clonezilla.
-3. Restauració efectiva de les imatges creades.
-4. Documentació clara i detallada amb captures de pantalla.
-  - portada: nom, cognom, data, mòdul
-  - index
-  - introducció
-  - desenvolupament
-  - conclusions
+---
 
-## **Recursos Addicionals**
-- [Guia d’ús de `dd` a Linux](https://www.geeksforgeeks.org/dd-command-in-linux-with-examples/)
-- [Clonezilla - Documentació oficial](https://clonezilla.org/clonezilla-live-doc.php)
+#### **6. Anàlisi de Rendiment**
+1. Realitza proves de rendiment per comparar els diferents sistemes de fitxers implementats:
+   - Velocitat d’escriptura.
+   - Velocitat de lectura.
+2. Analitza els resultats obtinguts i compara el rendiment de cada partició.
+
+---
+
+Aquí tens l'apartat d'entrega revisat amb els requeriments de disseny del document:
+
+---
+
+### **Entrega**
+El document final que has d'entregar ha de seguir aquesta estructura:
+
+1. **Portada**:  
+   - Nom i cognoms.  
+   - Data.  
+   - Títol de la pràctica: *Gestió Avançada de Particions*.  
+   - Mòdul o assignatura.
+
+2. **Índex**:  
+   - Llista ordenada i clicable (si es fa en format electrònic) de les seccions del document.
+
+3. **Introducció**:  
+   - Breu explicació dels objectius i la importància de la pràctica.
+
+4. **Desenvolupament**:  
+   - Descripció detallada de cada fase, pas a pas, amb el codi utilitzat i explicacions corresponents.  
+   - **Captures de pantalla** que validin cada pas realitzat.
+
+5. **Conclusions**:  
+   - Reflexió sobre el procés d'aprenentatge, possibles dificultats trobades i com s'han resolt.  
+   - Observacions sobre els resultats obtinguts.
+  
+---
+
+### **Criteris d'Avaluació**
+1. Creació correcta de particions segons les especificacions.
+2. Formatació i preparació de les particions.
+3. Muntatge i desmuntatge utilitzant exclusivament codi.
+4. Configuració d’automuntatge correcta i funcional.
+5. Documentació clara, completa i estructurada amb captures de pantalla.
