@@ -81,3 +81,28 @@ Has de presentar un document amb aquesta estructura:
 3. Es poden muntar i desmuntar les particions utilitzant codi.
 4. L’automuntatge funciona correctament.
 5. El document entregat és complet, ben estructurat i inclou captures de pantalla i explicacions clares.
+
+---
+
+### **Referències i recursos recomanats**
+
+1. Documentació oficial i recursos generals
+- [Documentació de Linux](https://www.kernel.org/doc/html/latest/)
+- [Guia de particions amb `fdisk`](https://linux.die.net/man/8/fdisk)
+- [Manual del sistema de fitxers ext4](https://ext4.wiki.kernel.org/)
+
+2. Articles i tutorials
+- [Creació de particions amb `fdisk` en Linux (TecMint)](https://www.tecmint.com/create-partitions-in-linux/)
+- [Guia per formatar particions en Linux (Linuxize)](https://linuxize.com/post/how-to-format-disk-partitions-in-linux/)
+- [Configurar swap en Linux (TecMint)](https://www.tecmint.com/create-and-activate-swap-partition-in-linux/)
+
+3. Configuració del fitxer `/etc/fstab`
+- [Introducció a `/etc/fstab` (Linux Handbook)](https://linuxhandbook.com/fstab/)
+- [Muntar particions automàticament amb `/etc/fstab` (Cyberciti)](https://www.cyberciti.biz/faq/linux-fstab-example/)
+
+4. Anàlisi de rendiment amb `dd`
+- [Com fer proves de rendiment amb `dd` (TecMint)](https://www.tecmint.com/test-hard-disk-performance-in-linux/)
+
+5. Altres recursos útils
+- [Sistema de fitxers NTFS a Linux (ntfs-3g)](https://wiki.archlinux.org/title/NTFS-3G)
+- [Eines addicionals per gestionar particions (`parted`)](https://www.gnu.org/software/parted/manual/)
