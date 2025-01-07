@@ -1,101 +1,81 @@
-## Pràctica: **Gestió Avançada de Particions**
+### Pràctica: **Gestió Avançada de Particions**
 
-### **Objectius**
-Aquesta pràctica té com a objectiu que aprenguis a:
-1. Crear i gestionar particions en un disc dur virtual.
-2. Donar format i configurar sistemes de fitxers a les particions.
-3. Montar i desmuntar particions utilitzant exclusivament codi.
-4. Configurar particions perquè es muntin automàticament al sistema mitjançant fitxers de configuració.
-5. Analitzar el rendiment de diferents sistemes de fitxers.
+#### **Objectius**
+En aquesta pràctica treballaràs amb la gestió de particions en un entorn virtual. Aprendràs a:
+- Crear i configurar particions en un disc virtual.
+- Aplicar sistemes de fitxers a cada partició.
+- Montar i desmuntar particions manualment fent servir codi.
+- Configurar l’automuntatge de particions al sistema.
+- Comparar el rendiment de diferents sistemes de fitxers.
 
-### **Materials Necessaris**
-- **Ordinador amb VirtualBox** instal·lat.
-- **Sistema Operatiu Ubuntu 22.04** configurat en una màquina virtual.
-- Disc secundari anomenat **disc-secundari.vdi** creat dins de VirtualBox.
+#### **Què necessitaràs?**
+- Una màquina virtual amb **Ubuntu 22.04** configurada.
+- Un disc virtual addicional, **disc-secundari.vdi**, creat amb una mida de 10 GB.
 
 ---
 
 ### **Fases de la Pràctica**
 
-#### **1. Creació i Configuració Inicial del Disc**
-1. Crea un disc virtual nou de **10 GB** dins de VirtualBox amb el nom **disc-secundari.vdi** i afegeix-lo com a disc secundari a la màquina virtual Ubuntu.
-2. Verifica que el disc està disponible al sistema.
+#### **1. Configuració del disc virtual**
+1. Crea un disc virtual de **10 GB** anomenat **disc-secundari.vdi** i afegeix-lo com a disc secundari a la màquina virtual.
+2. Comprova que el disc és visible dins del sistema Ubuntu.
 
 ---
 
-#### **2. Creació de Particions**
-1. Utilitza eines per gestionar les particions del disc secundari.
-2. Segueix aquestes especificacions per al disseny de particions:
-   - **Partició 1**: 4 GB, format ext4.
-   - **Partició 2**: 4 GB, format NTFS.
+#### **2. Creació de particions**
+1. Utilitza les eines del sistema per crear particions al disc secundari seguint aquestes especificacions:
+   - **Partició 1**: 4 GB amb sistema de fitxers ext4.
+   - **Partició 2**: 4 GB amb sistema de fitxers NTFS.
    - Espai restant: partició de swap.
-
-3. Documenta els passos per verificar que les particions han estat creades correctament.
-
----
-
-#### **3. Formatació i Preparació de les Particions**
-1. Aplica el sistema de fitxers adequat a cada partició:
-   - ext4 a la primera partició.
-   - NTFS a la segona partició.
-   - Activa l’espai de swap a l'última partició.
-2. Comprova que cada partició està preparada per ser utilitzada.
+2. Assegura’t que les particions s’han creat correctament i documenta el procés.
 
 ---
 
-#### **4. Muntatge i Desmuntatge de Particions**
-1. Munta les particions de manera manual a punts de muntatge especificats.
-2. Documenta com verificar que les particions estan correctament muntades.
-3. Desmunta totes les particions de manera manual.
+#### **3. Preparació i formatació**
+1. Dona format a cada partició amb el sistema de fitxers corresponent.
+2. Activa l’espai de swap.
+3. Verifica que totes les particions estan llestes per al seu ús.
 
 ---
 
-#### **5. Configuració Automàtica del Muntatge**
-1. Configura el fitxer de configuració del sistema per tal que les particions es muntin automàticament a l'inici del sistema.
-2. Assegura't que les particions es munten de manera automàtica i estable.
+#### **4. Muntatge i desmuntatge**
+1. Munta cada partició en un punt de muntatge específic.
+2. Verifica que les particions estan correctament muntades.
+3. Desmunta-les manualment i comprova que s’han desmuntat.
 
 ---
 
-#### **6. Anàlisi de Rendiment**
-1. Realitza proves de rendiment per comparar els diferents sistemes de fitxers implementats:
-   - Velocitat d’escriptura.
-   - Velocitat de lectura.
-2. Analitza els resultats obtinguts i compara el rendiment de cada partició.
+#### **5. Automuntatge al sistema**
+1. Configura el fitxer de configuració del sistema perquè les particions es muntin automàticament cada vegada que el sistema s’inicia.
+2. Comprova que l’automuntatge funciona sense problemes.
 
 ---
 
-Aquí tens l'apartat d'entrega revisat amb els requeriments de disseny del document:
+#### **6. Anàlisi de rendiment**
+1. Fes proves de rendiment a cada partició per mesurar la velocitat de lectura i escriptura.
+2. Analitza els resultats i compara els rendiments dels diferents sistemes de fitxers.
 
 ---
 
 ### **Entrega**
-El document final que has d'entregar ha de seguir aquesta estructura:
+Has de presentar un document amb aquesta estructura:
 
-1. **Portada**:  
-   - Nom i cognoms.  
-   - Data.  
-   - Títol de la pràctica: *Gestió Avançada de Particions*.  
-   - Mòdul o assignatura.
+1. **Portada**
+   - Nom complet, data i títol de la pràctica.
+2. **Índex**
+   - Inclou totes les seccions del document, numerades i ordenades.
+3. **Introducció**
+   - Explica breument els objectius i la importància de la pràctica.
+4. **Desenvolupament**
+   - Detalla cada fase amb explicacions clares, captures de pantalla i el codi utilitzat.
+5. **Conclusions**
+   - Reflexiona sobre el que has après, els reptes que has trobat i els resultats obtinguts.
 
-2. **Índex**:  
-   - Llista ordenada i clicable (si es fa en format electrònic) de les seccions del document.
-
-3. **Introducció**:  
-   - Breu explicació dels objectius i la importància de la pràctica.
-
-4. **Desenvolupament**:  
-   - Descripció detallada de cada fase, pas a pas, amb el codi utilitzat i explicacions corresponents.  
-   - **Captures de pantalla** que validin cada pas realitzat.
-
-5. **Conclusions**:  
-   - Reflexió sobre el procés d'aprenentatge, possibles dificultats trobades i com s'han resolt.  
-   - Observacions sobre els resultats obtinguts.
-  
 ---
 
-### **Criteris d'Avaluació**
-1. Creació correcta de particions segons les especificacions.
-2. Formatació i preparació de les particions.
-3. Muntatge i desmuntatge utilitzant exclusivament codi.
-4. Configuració d’automuntatge correcta i funcional.
-5. Documentació clara, completa i estructurada amb captures de pantalla.
+### **Criteris d’Avaluació**
+1. Les particions compleixen les especificacions donades.
+2. Els sistemes de fitxers estan configurats correctament.
+3. Es poden muntar i desmuntar les particions utilitzant codi.
+4. L’automuntatge funciona correctament.
+5. El document entregat és complet, ben estructurat i inclou captures de pantalla i explicacions clares.
