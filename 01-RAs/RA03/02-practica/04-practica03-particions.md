@@ -1,4 +1,6 @@
-### Pràctica: **Gestió Avançada de Particions**
+### Pràctica: **Gestió Avançada de Particions**  
+
+💡 **IMPORTANT:** Tota la pràctica l'has de desenvolupar mitjançant **commmandes a la terminal**. **NO utilitzis aplicacions d'escriptori**
 
 #### **Objectius**
 En aquesta pràctica treballaràs amb la gestió de particions en un entorn virtual. Aprendràs a:
