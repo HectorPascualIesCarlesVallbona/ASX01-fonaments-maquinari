@@ -50,9 +50,9 @@ L'objectiu d'aquesta pràctica és aprendre a configurar i entendre les opcions 
 ---
 
 #### **5. Recuperació del GRUB**
-1. Crea un error intencionat al fitxer de configuració de GRUB (per exemple, modifica `/boot/grub/grub.cfg`).
+1. Crea un error intencionat al fitxer de configuració de GRUB (per exemple, modifica `/boot/grub/grub.cfg` esborrant alguna afegint una linea de codi per provocar-lo).
 2. Reinicia la màquina i observa què passa.
-3. Utilitza un disc de rescat ([Fedora WorkstationUbuntu Live ISO](https://ubuntu.com/download/desktop)) per accedir al sistema i reparar el GRUB seguint aquests passos:
+3. Utilitza un disc de rescat ([Ubuntu Live ISO](https://ubuntu.com/download/desktop)) per accedir al sistema i reparar el GRUB seguint aquests passos:
    - Munta la partició del sistema:
      ```bash
      sudo mount /dev/sdXn /mnt
