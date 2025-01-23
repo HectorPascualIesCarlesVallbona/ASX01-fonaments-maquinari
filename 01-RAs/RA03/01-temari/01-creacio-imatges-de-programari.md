@@ -127,9 +127,7 @@ Les imatges de suport són còpies exactes d’una partició o d'un disc complet
 
    ![Diagrama d'una imatge incremental](https://www.cloudwards.net/wp-content/uploads/2018/10/Types-of-Backups-720x720.png)
 
-3. **Imatges Diferencials**: Còpia dels canvis des
-
- de la darrera imatge completa. Permet restaurar el sistema amb només la còpia completa i l’última còpia diferencial.
+3. **Imatges Diferencials**: Còpia dels canvis des de la darrera imatge completa. Permet restaurar el sistema amb només la còpia completa i l’última còpia diferencial.
 
 - Exemple: Còpies diferencials setmanals en una empresa.
 - [Què són les imatges diferencials?](https://www.nakivo.com/blog/backup-types-full-incremental-differential-backup/) (Nakivo)
