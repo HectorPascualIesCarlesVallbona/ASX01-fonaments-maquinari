@@ -10,20 +10,28 @@ Les **Guest Additions** són un conjunt d'eines que permeten funcions avançades
    - **Dispositius** → **Inserir imatge de CD de les Guest Additions**.
 4. Dins de la màquina virtual, obre un terminal i executa:
    ```bash
-   sudo apt update
-   sudo apt install build-essential dkms linux-headers-$(uname -r)
+      sudo apt update
+      sudo apt install build-essential dkms linux-headers-$(uname -r)
    ```
 5. Munta el CD de les Guest Additions:
    ```bash
-   sudo mount /dev/cdrom /media/cdrom
+      sudo mkdir -p /media/cdrom
+      sudo mount /dev/cdrom /media/cdrom
+      lsblk
    ```
+   > 💡 **Nota:** Pot ser `/dev/sr0` en alguns casos en comptes de `/dev/cdrom`.
 6. Instal·la les Guest Additions:
    ```bash
-   sudo /media/cdrom/VBoxLinuxAdditions.run
+      sudo /media/cdrom/VBoxLinuxAdditions.run
+   ```
+
+   Si falta paquet bzip2
+   ```bash
+      sudo apt update && sudo apt install bzip2 -y
    ```
 7. Reinicia la màquina virtual:
    ```bash
-   sudo reboot
+      sudo reboot
    ```
 
 ---
