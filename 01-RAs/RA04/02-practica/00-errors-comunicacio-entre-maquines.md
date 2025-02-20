@@ -11,7 +11,7 @@ Obre **VirtualBox** i revisa la configuració de xarxa de cada MV:
 ## **2️. Configurar IP sense Gateway**
 Si fas servir "Red Interna" (`intnet`), no has de configurar `gateway4`. Modifica **Netplan** a `nom-cpd-monitor`:
 ```bash
-  sudo nano /etc/netplan/00-installer-config.yaml
+    sudo nano /etc/netplan/00-installer-config.yaml
 ```
 Afegeix/modifica:
 ```yaml
@@ -27,11 +27,11 @@ network:
 ```
 
 ```bash
-sudo netplan apply
+    sudo netplan apply
 ```
 Ara comprova la connexió:
 ```bash
-  ping -c 4 192.168.1.20
+    ping -c 4 192.168.1.20
 ```
 
 ---
