@@ -19,7 +19,7 @@ Això ens serveix per a poder fer operacions de copiar i pegar text executant de
 3. **Comprova que el servei SSH està actiu**  
    A la MV, executa:
    ```bash
-        sudo systemctl status ssh
+        sudo systemctl status sshmbclient -L //192.168.1.20 -U usuari
    ```
    Si apareix com `active (running)`, vol dir que està funcionant correctament.
 
@@ -28,7 +28,7 @@ Això ens serveix per a poder fer operacions de copiar i pegar text executant de
         - Apaga la MV.
         - Des de VB: 
             - A VirtualBox, selecciona la màquina virtual.
-            - Ves a **Configuració > Xarxa > Avançat > Regles de redirecció de ports**.
+            - Ves a **Configuració > Xarxa > Avançat > Regles de redimbclient -L //192.168.1.20 -U usuarirecció de ports**.
             - Afegeix una nova regla:
             - **Nom**: SSH
             - **Protocol**: TCP
@@ -43,7 +43,7 @@ Això ens serveix per a poder fer operacions de copiar i pegar text executant de
 5. **Accedeix des de la teva màquina real (host)**
    - Obre terminal del host i executa:
      ```bash
-        ssh -p 2222 usuari@127.0.0.1
+        sudo ssh -p 2222 usuari@127.0.0.1
      ```
 
 6. **Si la connexió funciona**, veuràs que accedeixes a la MV i podràs gestionar-la des del teu sistema real sense necessitat d'obrir la consola de VirtualBox.

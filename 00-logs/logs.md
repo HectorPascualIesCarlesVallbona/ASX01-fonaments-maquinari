@@ -34,3 +34,13 @@
 - explicar temari examen
 - següent classe explicacions
 
+# 12022025
+- teoria CPD fins punt 3.1
+- presentació següent pràctica01 RA04
+
+# 19022025
+- Continuació temps per pràctica01 RA04
+
+# 28022025
+- entrega pràctica01 RA04
+
