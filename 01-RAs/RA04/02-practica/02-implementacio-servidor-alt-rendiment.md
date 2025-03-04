@@ -7,9 +7,10 @@ Dissenyar un sistema mínimament redundant dins d’un CPD virtualitzat, configu
 
 ## **1. Configuració del sistema**
 1. **Crea dues màquines virtuals**:
-   - **Servidor-Principal**: 2 CPU, 4 GB RAM, 2 discos (40 GB SO, 100 GB dades).
-   - **Servidor-Backup**: 1 CPU, 2 GB RAM, 1 disc (100 GB).
+   - **Servidor-Principal**: 2 CPU, 4 GB RAM, 2 discos (40 GB SO, 20 GB dades).
+   - **Servidor-Backup**: 1 CPU, 2 GB RAM, 2 discos (40 GB SO, 20 GB dades).
    - Xarxa en **mode "Bridged"**.
+   - **Si tens problemes amb mode Bridge**: [Nat and host only connection](../02-xtra/05-nat-and-host-only-connection.md)
 
 2. **Configura RAID 1 al Servidor-Principal**:
    - Usa `mdadm` per unir els dos discos de dades.
