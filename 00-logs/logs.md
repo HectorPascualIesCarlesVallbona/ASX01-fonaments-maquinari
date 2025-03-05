@@ -44,3 +44,7 @@
 # 28022025
 - entrega pràctica01 RA04
 
+# 05032025
+- continuació teoria des de punt 3.1
+- presentació pràctica o2 RA04
+
