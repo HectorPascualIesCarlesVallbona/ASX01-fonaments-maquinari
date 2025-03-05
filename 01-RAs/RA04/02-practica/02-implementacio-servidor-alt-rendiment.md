@@ -1,4 +1,4 @@
-# **Pràctica 2: Implementació d’un sistema redundant en un CPD**
+# **Pràctica 2: Implementació d’un servidor d'alt rendiment**
 
 ## **Objectiu**
 Dissenyar un sistema mínimament redundant dins d’un CPD virtualitzat, configurant servidors amb tolerància a fallades, seguretat de xarxa i mecanismes bàsics de monitorització.
@@ -79,7 +79,7 @@ Des del **Servidor-Backup**, fes una consulta SNMP per obtenir informació del `
 
 ## ⚠️ **IMPORTANT**
 🚨 **Normes d'entrega:**  
-- ❗ **Data límit d'entrega**: Passat aquest dia, la nota serà **0**.  
+- ❗ **Data límit d'entrega**: 14-03-2025 | 23:59, Passat aquest dia, la nota serà **0**.  
 - ❗ **Copiar d’un company** implica un **0 a tota l’UF**.  
 - ❗ **Captures de pantalla obligatòries** on es vegi el **nom i cognom de l’alumne**.  
 - ❗ **Només es pot abandonar l'aula després d’entregar la pràctica a Moodle**.  
