@@ -7,6 +7,7 @@ Dissenyar un sistema mínimament redundant dins d’un CPD virtualitzat, configu
 
 ## **1. Configuració del sistema**
 1. **Crea dues màquines virtuals**:
+   - **SO**: Ubuntu Server.
    - **Servidor-Principal**: 2 CPU, 4 GB RAM, 2 discos (40 GB SO, 20 GB dades).
    - **Servidor-Backup**: 1 CPU, 2 GB RAM, 2 discos (40 GB SO, 20 GB dades).
    - Xarxa en **mode "Bridged"**.
