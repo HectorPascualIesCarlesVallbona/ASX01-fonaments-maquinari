@@ -79,7 +79,7 @@ Des del **Servidor-Backup**, fes una consulta SNMP per obtenir informació del `
 
 ## ⚠️ **IMPORTANT**
 🚨 **Normes d'entrega:**  
-- ❗ **Data límit d'entrega**: 18-03-2025 | 23:59, Passat aquest dia, la nota serà **0**.  
+- ❗ **Data límit d'entrega**: 19-03-2025 | 23:59, Passat aquest dia, la nota serà **0**.  
 - ❗ **Copiar d’un company** implica un **0 a tota l’UF**.  
 - ❗ **Captures de pantalla obligatòries** on es vegi el **nom i cognom de l’alumne**.  
 - ❗ **Només es pot abandonar l'aula després d’entregar la pràctica a Moodle**.  
